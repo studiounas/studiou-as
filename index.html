@@ -68,54 +68,12 @@
       </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="grid lg:grid-cols-3 gap-6 mb-12">
-      <div class="glass p-6 rounded-2xl shadow-soft">
-        <h3 class="text-xl font-semibold">Servicios populares</h3>
-        <p class="text-sm text-[var(--muted)] mt-2">Elige el servicio que prefieras.</p>
-
-        <ul class="mt-4 space-y-3 text-sm">
-          <li class="flex justify-between items-center"><div><strong>Manicura clásica</strong><div class="text-[var(--muted)] text-xs">Limpieza y esmalte</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$250</span></li>
-
-          <li class="flex justify-between items-center"><div><strong>Manicura gel</strong><div class="text-[var(--muted)] text-xs">Duración 3 semanas</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$450</span></li>
-
-          <li class="flex justify-between items-center"><div><strong>Acrílico completo</strong><div class="text-[var(--muted)] text-xs">Extensión + diseño</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$700</span></li>
-
-          <li class="flex justify-between items-center"><div><strong>Pedicura spa</strong><div class="text-[var(--muted)] text-xs">Exfoliación</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$350</span></li>
-        </ul>
-      </div>
-
-      <div class="glass p-6 rounded-2xl shadow-soft lg:col-span-2">
-        <a id="precios"></a><h3 class="text-xl font-semibold">Paquetes premium</h3>
-
-        <div class="mt-4 grid md:grid-cols-3 gap-4">
-
-          <div class="p-4 rounded-xl border">
-            <div class="text-sm font-semibold">Express</div>
-            <div class="mt-2 text-[var(--muted)] text-xs">Manicura rápida</div>
-            <div class="mt-4 text-lg font-bold">$200</div>
-          </div>
-
-          <div class="p-4 rounded-xl border">
-            <div class="text-sm font-semibold">Full Deluxe</div>
-            <div class="mt-2 text-[var(--muted)] text-xs">Manicura + Pedicura</div>
-            <div class="mt-4 text-lg font-bold">$950</div>
-          </div>
-
-          <div class="p-4 rounded-xl border">
-            <div class="text-sm font-semibold">Novias</div>
-            <div class="mt-2 text-[var(--muted)] text-xs">Prueba + evento</div>
-            <div class="mt-4 text-lg font-bold">$1,600</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <!-- Galería -->
     <section id="galeria" class="mb-12">
       <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center mx-auto">
         <template id="img-template">
           <div class="relative group rounded-xl overflow-hidden cursor-pointer">
             <img class="w-full h-40 object-cover transform group-hover:scale-105 transition">
@@ -264,6 +222,29 @@
 </section>
 
 
+<section id="galeria" class="mb-12 max-w-6xl mx-auto px-6">
+  <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
+
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <template id="img-template">
+      <div class="relative group rounded-xl overflow-hidden cursor-pointer">
+        <img class="w-full h-40 object-cover transform group-hover:scale-105 transition">
+        <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
+          Ver
+        </div>
+      </div>
+    </template>
+  </div>
+</section>
+
+<!-- ================= MODAL IMAGEN GRANDE ================= -->
+<div id="imgModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+  <div class="relative max-w-4xl w-full p-4">
+    <button id="closeModal"
+      class="absolute -top-3 -right-3 bg-white text-black rounded-full w-8 h-8 shadow">✕</button>
+    <img id="modalImg" class="w-full max-h-[90vh] object-contain rounded-xl">
+  </div>
+</div>
 
 
 
@@ -413,14 +394,35 @@ const galleryUrls = [
 
 const grid = document.querySelector('#galeria .grid');
 const tmpl = document.getElementById('img-template');
+const modal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+const closeModal = document.getElementById('closeModal');
 
-if(grid && tmpl){
-  galleryUrls.forEach(url=>{
-    const node = tmpl.content.cloneNode(true);
-    node.querySelector('img').src = url;
-    grid.appendChild(node);
-  });
-}
+galleryUrls.forEach(url=>{
+  const node = tmpl.content.cloneNode(true);
+  const img = node.querySelector('img');
+  img.src = url;
+
+  node.querySelector('.group').onclick = ()=>{
+    modalImg.src = url;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  };
+
+  grid.appendChild(node);
+});
+
+closeModal.onclick = ()=>{
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+};
+
+modal.onclick = e=>{
+  if(e.target === modal){
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+};
 
 /* ================= FORMULARIO (WHATSAPP FUNCIONANDO) ================= */
 const bookingForm = document.getElementById('bookingForm');
@@ -464,5 +466,9 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 </body>
 </html>
+
+
+
+
 
 
