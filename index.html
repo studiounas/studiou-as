@@ -8,10 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CDN -->
+  <!-- Tailwind CDN (para prototipo premium) -->
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     :root{--accent:#b76bae;--muted:#6b7280}
     body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
@@ -21,8 +19,10 @@
   </style>
 </head>
 
-<body class="bg-gradient-to-b from-white to-rose-50 min-h-screen text-slate-900">
 
+
+
+<body class="bg-gradient-to-b from-white to-rose-50 min-h-screen text-slate-900">
   <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
     <div class="flex items-center gap-4">
       <div class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-purple-500 text-white font-bold shadow-md">BB</div>
@@ -40,20 +40,17 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-6 pb-20">
-
     <!-- Hero -->
     <section class="grid md:grid-cols-2 gap-8 items-center mb-10">
       <div class="glass p-8 rounded-2xl shadow-soft">
         <h2 class="text-3xl md:text-4xl font-extrabold">Luce uñas perfectas — Reserva tu cita</h2>
         <p class="mt-3 text-[var(--muted)]">Servicios profesionales, materiales de alta calidad y diseños personalizados. Elige tu servicio, fecha y estilista.</p>
-
         <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
           <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Productos veganos disponibles</li>
           <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Ambiente seguro e higiénico</li>
           <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Opciones express y premium</li>
           <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Pago en efectivo o transferencia</li>
         </ul>
-
         <div class="flex gap-3 mt-6">
           <a href="#reservar" class="inline-flex items-center gap-2 bg-[var(--accent)] text-white px-5 py-3 rounded-full shadow">Reservar ahora</a>
           <a href="#galeria" class="inline-flex items-center gap-2 border px-5 py-3 rounded-full">Ver diseños</a>
@@ -62,49 +59,74 @@
 
       <div class="rounded-2xl overflow-hidden shadow-soft">
         <picture>
-          <source srcset="https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b?q=80&w=1200&auto=format&fit=crop" media="(min-width:768px)">
-          <img alt="Manicura profesional" src="https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b?q=80&w=800&auto=format&fit=crop" class="w-full h-72 object-cover">
+          <source srcset="https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" media="(min-width:768px)">
+          <img alt="Manicura profesional" src="https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" class="w-full h-72 object-cover">
         </picture>
       </div>
     </section>
 
-    
+    <!-- Servicios + Precios destacados -->
+    <section id="servicios" class="grid lg:grid-cols-3 gap-6 mb-12">
+      <div class="glass p-6 rounded-2xl shadow-soft">
+        <h3 class="text-xl font-semibold">Servicios populares</h3>
+        <p class="text-sm text-[var(--muted)] mt-2">Elige el servicio que prefieras. Si quieres un diseño personalizado, escribe en notas al reservar.</p>
+        <ul class="mt-4 space-y-3 text-sm">
+          <li class="flex justify-between items-center"><div><strong>Manicura clásica</strong><div class="text-[var(--muted)] text-xs">Limpieza, limado y esmalte</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$250</span></li>
+          <li class="flex justify-between items-center"><div><strong>Manicura gel</strong><div class="text-[var(--muted)] text-xs">Duración hasta 3 semanas</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$450</span></li>
+          <li class="flex justify-between items-center"><div><strong>Acrílico completo</strong><div class="text-[var(--muted)] text-xs">Extensión + diseño</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$700</span></li>
+          <li class="flex justify-between items-center"><div><strong>Pedicura spa</strong><div class="text-[var(--muted)] text-xs">Exfoliación y masaje</div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$350</span></li>
+        </ul>
+      </div>
+
+      <div class="glass p-6 rounded-2xl shadow-soft lg:col-span-2">
+        <a id="precios"></a><h3 class="text-xl font-semibold">Paquetes premium</h3>
+        <div class="mt-4 grid md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl border">
+            <div class="text-sm font-semibold">Express</div>
+            <div class="mt-2 text-[var(--muted)] text-xs">Manicura rápida</div>
+            <div class="mt-4 text-lg font-bold">$200</div>
+          </div>
+          <div class="p-4 rounded-xl border">
+            <div class="text-sm font-semibold">Full Deluxe</div>
+            <div class="mt-2 text-[var(--muted)] text-xs">Manicura + Pedicura + Diseño</div>
+            <div class="mt-4 text-lg font-bold">$950</div>
+          </div>
+          <div class="p-4 rounded-xl border">
+            <div class="text-sm font-semibold">Novias</div>
+            <div class="mt-2 text-[var(--muted)] text-xs">Prueba + Servicio día B</div>
+            <div class="mt-4 text-lg font-bold">$1,600</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Galería -->
     <section id="galeria" class="mb-12">
       <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
-
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 justify-center mx-auto">
+      <p class="text-sm text-[var(--muted)] mb-6">Toca cualquier imagen para verla ampliada. Inspírate y elige tu estilo.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- 8 imágenes de ejemplo -->
         <template id="img-template">
           <div class="relative group rounded-xl overflow-hidden cursor-pointer">
-            <img class="w-full h-40 object-cover transform group-hover:scale-105 transition">
+            <img class="w-full h-40 object-cover transform group-hover:scale-105 transition" loading="lazy">
             <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">Ver</div>
           </div>
         </template>
       </div>
     </section>
 
-    <!-- FORMULARIO DE RESERVA -->
+    <!-- Formulario de reserva -->
     <section id="reservar" class="glass p-6 rounded-2xl shadow-soft max-w-3xl mx-auto">
       <h3 class="text-2xl font-semibold">Reservar cita</h3>
-
+      <p class="text-sm text-[var(--muted)] mb-4">Completa los datos y revisa el resumen antes de confirmar. (Esta página usa simulación local — conecta con tu backend cuando lo necesites.)</p>
       <form id="bookingForm" class="grid gap-3">
-
         <div class="grid md:grid-cols-2 gap-3">
-          <label class="flex flex-col text-sm">
-            <span>Nombre completo</span>
-            <input required name="name" class="mt-1 p-3 rounded-md border">
-          </label>
-
-          <label class="flex flex-col text-sm">
-            <span>Teléfono / WhatsApp</span>
-            <input required name="phone" class="mt-1 p-3 rounded-md border">
-          </label>
+          <label class="flex flex-col text-sm"><span>Nombre completo</span><input required name="name" class="mt-1 p-3 rounded-md border" placeholder="Ej. María Pérez"></label>
+          <label class="flex flex-col text-sm"><span>Teléfono / WhatsApp</span><input required name="phone" class="mt-1 p-3 rounded-md border" placeholder="Ej. 55 1234 5678"></label>
         </div>
 
         <div class="grid md:grid-cols-3 gap-3">
-
-          <label class="flex flex-col text-sm">
-            <span>Servicio</span>
+          <label class="flex flex-col text-sm"><span>Servicio</span>
             <select required name="service" class="mt-1 p-3 rounded-md border">
               <option value="Manicura clásica">Manicura clásica — $250</option>
               <option value="Manicura gel">Manicura gel — $450</option>
@@ -113,134 +135,124 @@
               <option value="Full Deluxe">Full Deluxe — $950</option>
             </select>
           </label>
+          <label class="flex flex-col text-sm"><span>Fecha</span><div id="calendario" class="grid grid-cols-7 gap-1 text-center text-xs my-2"></div>
+  <div>
+ <div class="flex flex-wrap gap-4 justify-center items-center mb-4 text-sm font-semibold">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+        <span class="text-gray-700">Disponible</span>
+      </div>
 
-          <!-- CALENDARIO -->
-          <label class="flex flex-col text-sm">
-            <span>Fecha</span>
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-orange-400"></span>
+        <span class="text-gray-700">Citas agotadas</span>
+      </div>
 
-            <!-- ▼ CALENDARIO ▼ -->
-            <div id="calendario" class="grid grid-cols-7 gap-1 text-center text-xs my-2"></div>
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+        <span class="text-gray-700">No hay cita</span>
+      </div>
+    </div>
 
-            <!-- ▼ LEYENDA DE COLORES ▼ -->
-            <div class="mt-3 p-3 rounded-lg bg-white border text-xs">
-              <h4 class="font-semibold mb-2">📅 Disponibilidad de citas</h4>
+    <!-- CALENDARIO -->
+    <div id="calendario" class="grid grid-cols-7 gap-2"></div>
 
-              <div class="flex items-center mb-2">
-                <div class="w-4 h-4 bg-green-300 rounded mr-2"></div>
-                <span>Disponible (Verde)</span>
-              </div>
+  </div>
 
-              <div class="flex items-center mb-2">
-                <div class="w-4 h-4 bg-orange-300 rounded mr-2"></div>
-                <span>Quedan pocas citas (Naranja)</span>
-              </div>
+<script>
 
-              <div class="flex items-center">
-                <div class="w-4 h-4 bg-red-300 rounded mr-2"></div>
-                <span>No hay citas (Rojo)</span>
-              </div>
-            </div>
+function generarCalendario() {
+  const cal = document.getElementById('calendario');
+  cal.innerHTML = '';
 
-            <!-- Input de fecha -->
-            <input required type="date" name="date" class="mt-2 p-3 rounded-md border">
-          </label>
+  const hoy = new Date();
+  const año = hoy.getFullYear();
+  const mes = hoy.getMonth();
+  const primerDia = new Date(año, mes, 1).getDay();
+  const ultimoDia = new Date(año, mes + 1, 0).getDate();
+  const nombresDias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
 
-          <label class="flex flex-col text-sm">
-            <span>Hora</span>
-            <input required type="time" name="time" class="mt-1 p-3 rounded-md border">
-          </label>
+  // Días configurados
+  const diasVerdes  = [1, 2, 3, 4, 5, 6, 8, 9, 10]; // Verde → Disponible
+  const diasNaranja = [7, 14, 21, 28];             // Naranja → Citas agotadas
+  const diasRojos   = [11, 12, 13];               // Rojo → No hay cita
 
+  // Encabezados de días
+  nombresDias.forEach(d => {
+    const h = document.createElement('div');
+    h.textContent = d;
+    h.className = 'font-bold text-center text-gray-700';
+    cal.appendChild(h);
+  });
+
+  // Offset para el primer día del mes
+  let offset = primerDia === 0 ? 6 : primerDia - 1;
+  for(let i = 0; i < offset; i++){
+    cal.appendChild(document.createElement('div'));
+  }
+
+  // Días del mes
+  for(let dia = 1; dia <= ultimoDia; dia++){
+    const c = document.createElement('div');
+    c.textContent = dia;
+    c.className = 'p-2 rounded-lg text-center border cursor-pointer';
+
+    if(diasVerdes.includes(dia)){
+      c.classList.add('bg-green-400','text-white','shadow-lg'); // Verde: Disponible
+    } else if(diasNaranja.includes(dia)){
+      c.classList.add('bg-orange-400','text-white','shadow-md'); // Naranja: Citas agotadas
+    } else if(diasRojos.includes(dia)){
+      c.classList.add('bg-red-500','text-white','opacity-80','shadow-sm'); // Rojo: No hay cita
+    } else {
+      c.classList.add('bg-gray-200'); // Gris: No configurado
+    }
+
+    cal.appendChild(c);
+  }
+}
+
+// Generar calendario al cargar
+generarCalendario();
+
+
+</script></span><input required type="date" name="date" min="${new Date().toISOString().split('T')[0]}" class="mt-1 p-3 rounded-md border"></label>
+          <label class="flex flex-col text-sm"><span>Hora</span><input required type="time" name="time" class="mt-1 p-3 rounded-md border"></label>
         </div>
 
-        <label class="flex flex-col text-sm">
-          <span>Notas / Diseño (opcional)</span>
-          <textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border"></textarea>
-        </label>
+        <label class="flex flex-col text-sm"><span>Notas / Diseño (opcional)</span><textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border" placeholder="Ej. Me gustaría color nude con brillo"></textarea></label>
 
         <div class="flex gap-3 items-center">
           <button type="submit" class="px-5 py-3 rounded-full bg-[var(--accent)] text-white font-semibold shadow">Confirmar cita</button>
           <button type="button" id="clearBtn" class="px-4 py-3 rounded-full border">Limpiar</button>
           <div class="ml-auto text-sm text-[var(--muted)]">Pago en el estudio</div>
         </div>
-
       </form>
 
       <div id="summary" class="mt-6 hidden p-4 border rounded-md bg-white">
         <h4 class="font-semibold">Resumen de la reserva</h4>
         <div id="summaryContent" class="text-sm mt-2"></div>
-
         <div class="mt-4 flex gap-3">
           <button id="copyBtn" class="px-4 py-2 rounded bg-slate-100">Copiar resumen</button>
-          <a id="whatsappBtn" class="px-4 py-2 rounded bg-green-600 text-white" target="_blank">Enviar por WhatsApp</a>
+          <a id="whatsappBtn" class="px-4 py-2 rounded bg-green-600 text-white" target="_blank" rel="noopener">Enviar por WhatsApp</a>
         </div>
       </div>
     </section>
+
+    <!-- Testimonios y contacto -->
+    <section class="mt-10 grid md:grid-cols-2 gap-6">
+      <div class="glass p-6 rounded-2xl shadow-soft">
+        <h4 class="text-lg font-semibold">Testimonios</h4>
+        <blockquote class="mt-4 text-sm text-[var(--muted)]">"La mejor manicura que he tenido. Duró semanas y se veía perfecta." — Ana G.</blockquote>
+        <blockquote class="mt-4 text-sm text-[var(--muted)]">"Profesionales y súper amables. Recomendado 100%." — Laura M.</blockquote>
+      </div>
+      <div class="glass p-6 rounded-2xl shadow-soft">
+        <h4 class="text-lg font-semibold">Contacto</h4>
+        <p class="text-sm text-[var(--muted)] mt-2">Cualquier duda escríbenos por WhatsApp o llama al número abajo.</p>
+        <p class="mt-4 font-semibold">WhatsApp: <a href="https://wa.me/522321364743" target="_blank" rel="noopener" class="text-[var(--accent)]">+52 232-136-4743</a></p>
+        <p class="text-sm text-[var(--muted)] mt-4">Dirección: Calle Ejemplo 123, Col. Centro</p>
+      </div>
+    </section>
   </main>
-
-
-
-<section class="mt-12 flex justify-center">
-  <div class="w-full max-w-5xl px-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-    <!-- Testimonios -->
-    <div class="bg-white rounded-2xl p-6 shadow-lg text-center md:text-left">
-      <h4 class="text-lg font-semibold text-slate-900 mb-4">Testimonios</h4>
-
-      <p class="text-sm text-slate-600 italic mb-3">
-        "La mejor manicura que he tenido. Duró semanas y se veía perfecta." —
-        <span class="font-medium text-slate-800">Ana G.</span>
-      </p>
-
-      <p class="text-sm text-slate-600 italic">
-        "Profesionales y súper amables. Recomendado 100%." —
-        <span class="font-medium text-slate-800">Laura M.</span>
-      </p>
-    </div>
-
-    <!-- Contacto -->
-    <div class="bg-white rounded-2xl p-6 shadow-lg text-center md:text-left">
-      <h4 class="text-lg font-semibold text-slate-900 mb-4">Contacto</h4>
-
-      <p class="text-sm text-slate-600 mb-4">
-        Cualquier duda escríbenos por WhatsApp o llama al número abajo.
-      </p>
-
-      <p class="text-sm font-semibold mb-2">
-        WhatsApp:
-        <a href="https://wa.me/523231364743" target="_blank"
-           class="text-[var(--accent)] hover:underline">
-          232 136 4743
-        </a>
-      </p>
-
-      <p class="text-sm text-slate-600">
-        Dirección: Calle Ejemplo 123, Col. Centro
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-<!-- ================= MODAL IMAGEN GRANDE ================= -->
-<div id="imgModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
-  <div class="relative max-w-4xl w-full p-4">
-    <button id="closeModal"
-      class="absolute -top-3 -right-3 bg-white text-black rounded-full w-8 h-8 shadow">✕</button>
-    <img id="modalImg" class="w-full max-h-[90vh] object-contain rounded-xl">
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
 
   <footer class="mt-12 py-6 border-t bg-white">
     <div class="max-w-6xl mx-auto px-6 text-sm flex justify-between items-center">
@@ -249,210 +261,90 @@
     </div>
   </footer>
 
- 
+  <!-- Modal / Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+    <div class="max-w-3xl w-full p-4">
+      <button id="closeLb" class="mb-4 text-white">Cerrar ✕</button>
+      <img id="lbImg" src="" alt="" class="w-full rounded-lg shadow-lg">
+    </div>
+  </div>
 
+  <script>
+    // Fill gallery with sample images (Unsplash curated links)
+    const galleryUrls = [
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1',
+      'https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=2',
+      'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3',
+      'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4',
+      'https://images.unsplash.com/photo-1520975698517-4d0f9f3d74d2?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5',
+      'https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6',
+      'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7',
+      'https://images.unsplash.com/photo-1541417908248-4e1f5b0a6a3b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=8'
+    ];
+    const grid = document.querySelector('#galeria .grid');
+    const tmpl = document.getElementById('img-template');
+    galleryUrls.forEach(url => {
+      const node = tmpl.content.cloneNode(true);
+      const img = node.querySelector('img');
+      img.src = url;
+      img.alt = 'Diseño de uñas';
+      const wrapper = node.querySelector('div');
+      wrapper.addEventListener('click', () => openLightbox(url));
+      grid.appendChild(node);
+    });
 
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    function openLightbox(url){ lbImg.src = url; lightbox.classList.remove('hidden'); document.body.style.overflow='hidden'; }
+    document.getElementById('closeLb').addEventListener('click', closeLb);
+    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
+    function closeLb(){ lightbox.classList.add('hidden'); lbImg.src=''; document.body.style.overflow='auto'; }
 
+    // Booking form logic (client-side simulation)
+    const bookingForm = document.getElementById('bookingForm');
+    const summary = document.getElementById('summary');
+    const summaryContent = document.getElementById('summaryContent');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const clearBtn = document.getElementById('clearBtn');
 
-<!-- 📅 SCRIPT DEL CALENDARIO -->
-<script>
-function generarCalendario(){
-  const cal = document.getElementById('calendario');
-  cal.innerHTML = '';
+    bookingForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const f = new FormData(bookingForm);
+      const data = Object.fromEntries(f.entries());
+      const txt = `Reserva: \nNombre: ${data.name}\nTel: ${data.phone}\nServicio: ${data.service}\nFecha: ${data.date} Hora: ${data.time}\nNotas: ${data.notes || '-'} `;
+      summaryContent.textContent = txt.replace(/\n/g,'\n');
+      // Build WhatsApp link (pre-filled message)
+      const waText = encodeURIComponent(txt + '\n¡Gracias!');
+      whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
+      summary.classList.remove('hidden');
+      // scroll removed
+    });
 
-  const hoy = new Date();
-  const año = hoy.getFullYear();
-  const mes = hoy.getMonth();
-  const primerDia = new Date(año, mes, 1).getDay();
-  const ultimoDia = new Date(año, mes + 1, 0).getDate();
-  const diasSemana = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+    copyBtn.addEventListener('click', ()=>{
+      navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
+        copyBtn.textContent = 'Copiado';
+        setTimeout(()=>copyBtn.textContent='Copiar resumen',1200);
+      }).catch(()=>{ copyBtn.textContent='Error'; setTimeout(()=>copyBtn.textContent='Copiar resumen',1200); });
+    });
 
-  // 🎨 ESTADOS DE LOS DÍAS (EDITA AQUÍ)
-  const diasEstado = {
-    2:  'verde',
-    4:  'verde',
-    6:  'naranja',
-    9:  'rojo',
-    12: 'verde',
-    15: 'naranja',
-    18: 'rojo',
-    22: 'verde',
-    27: 'rojo'
-  };
+    clearBtn.addEventListener('click', ()=>{ bookingForm.reset(); summary.classList.add('hidden'); });
 
-  const colores = {
-    rojo: '#ef4444',
-    verde: '#22c55e',
-    naranja: '#f97316'
-  };
+    // Small accessibility & year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  diasSemana.forEach(d => {
-    const h = document.createElement('div');
-    h.textContent = d;
-    h.className = 'font-bold';
-    cal.appendChild(h);
-  });
-
-  let offset = primerDia === 0 ? 6 : primerDia - 1;
-  for(let i=0;i<offset;i++){
-    cal.appendChild(document.createElement('div'));
-  }
-
-  for(let dia=1; dia<=ultimoDia; dia++){
-    const c = document.createElement('div');
-    c.textContent = dia;
-    c.className = 'p-2 rounded border select-none';
-
-    if(diasEstado[dia]){
-      const estado = diasEstado[dia];
-      c.style.backgroundColor = colores[estado];
-      c.style.color = '#fff';
-      c.classList.add('font-semibold');
-    }
-
-    cal.appendChild(c);
-  }
-}
-
-generarCalendario();
-
-
-
-/* ================= CALENDARIO ================= */
-function generarCalendario(){
-  const cal = document.getElementById('calendario');
-  if(!cal) return;
-
-  cal.innerHTML = '';
-  const hoy = new Date();
-  const año = hoy.getFullYear();
-  const mes = hoy.getMonth();
-  const primerDia = new Date(año, mes, 1).getDay();
-  const ultimoDia = new Date(año, mes + 1, 0).getDate();
-  const diasSemana = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-
-  const diasEstado = {
-    2:'verde',4:'verde',6:'naranja',9:'rojo',12:'verde',
-    15:'naranja',18:'rojo',22:'verde',27:'rojo'
-  };
-
-  const colores = {
-    rojo:'#ef4444',
-    verde:'#22c55e',
-    naranja:'#f97316'
-  };
-
-  diasSemana.forEach(d=>{
-    const h=document.createElement('div');
-    h.textContent=d;
-    h.className='font-bold';
-    cal.appendChild(h);
-  });
-
-  let offset = primerDia===0 ? 6 : primerDia-1;
-  for(let i=0;i<offset;i++) cal.appendChild(document.createElement('div'));
-
-  for(let dia=1; dia<=ultimoDia; dia++){
-    const c=document.createElement('div');
-    c.textContent=dia;
-    c.className='p-2 rounded border';
-
-    if(diasEstado[dia]){
-      c.style.backgroundColor = colores[diasEstado[dia]];
-      c.style.color='#fff';
-      c.classList.add('font-semibold');
-    }
-    cal.appendChild(c);
-  }
-}
-generarCalendario();
-
-/* ================= GALERÍA (SIN ERRORES) ================= */
-const galleryUrls = [
-  'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9',
-  'https://images.unsplash.com/photo-1556228720-3d5f8f4b9b2b',
-  'https://images.unsplash.com/photo-1545239351-1141bd82e8a6',
-  'https://images.unsplash.com/photo-1519681393784-d120267933ba',
-  'https://images.unsplash.com/photo-1520975698517-4d0f9f3d74d2',
-  'https://images.unsplash.com/photo-1503602642458-232111445657',
-  'https://images.unsplash.com/photo-1524504388940-b1c1722653e1',
-  'https://images.unsplash.com/photo-1541417908248-4e1f5b0a6a3b'
-];
-
-const grid = document.querySelector('#galeria .grid');
-const tmpl = document.getElementById('img-template');
-const modal = document.getElementById('imgModal');
-const modalImg = document.getElementById('modalImg');
-const closeModal = document.getElementById('closeModal');
-
-galleryUrls.forEach(url=>{
-  const node = tmpl.content.cloneNode(true);
-  const img = node.querySelector('img');
-  img.src = url;
-
-  node.querySelector('.group').onclick = ()=>{
-    modalImg.src = url;
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-  };
-
-  grid.appendChild(node);
-});
-
-closeModal.onclick = ()=>{
-  modal.classList.add('hidden');
-  modal.classList.remove('flex');
-};
-
-modal.onclick = e=>{
-  if(e.target === modal){
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-  }
-};
-
-/* ================= FORMULARIO (WHATSAPP FUNCIONANDO) ================= */
-const bookingForm = document.getElementById('bookingForm');
-const summary = document.getElementById('summary');
-const summaryContent = document.getElementById('summaryContent');
-const whatsappBtn = document.getElementById('whatsappBtn');
-
-bookingForm.addEventListener('submit', e=>{
-  e.preventDefault();
-
-  const data = Object.fromEntries(new FormData(bookingForm).entries());
-
-  const txt = `Reserva:
-Nombre: ${data.name}
-Teléfono: ${data.phone}
-Servicio: ${data.service}
-Fecha: ${data.date}
-Hora: ${data.time}
-Notas: ${data.notes || '-'}`;
-¡Gracias!
-  summaryContent.textContent = txt;
-
-  whatsappBtn.href =
-    `https://wa.me/522321364743?text=${encodeURIComponent(txt)}`;
-
-  summary.classList.remove('hidden');
-});
-
-/* ================= LIMPIAR ================= */
-document.getElementById('clearBtn').addEventListener('click', ()=>{
-  bookingForm.reset();
-  summary.classList.add('hidden');
-});
-
-/* ================= AÑO ================= */
-document.getElementById('year').textContent = new Date().getFullYear();
-
-
-
-</script>
-
+    // Prevent past dates on unsupported browsers (extra fallback)
+    (function setMinDate(){
+      const dateInputs = document.querySelectorAll('input[type=date]');
+      const today = new Date().toISOString().split('T')[0];
+      dateInputs.forEach(i=>i.setAttribute('min', today));
+    })();
+  </script>
 </body>
 </html>
+
+
 
 
 
