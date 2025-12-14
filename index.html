@@ -11,12 +11,33 @@
   <!-- Tailwind CDN (para prototipo premium) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{--accent:#b76bae;--muted:#6b7280}
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    .glass{background:rgba(255,255,255,0.65);backdrop-filter:blur(6px)}
-    .shadow-soft{box-shadow:0 10px 30px rgba(11,15,27,0.07)}
-    .price-badge{background:linear-gradient(90deg,#ffd1e6, #b76bae);color:white}
-  </style>
+  :root{--accent:#b76bae;--muted:#6b7280}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+  .glass{background:rgba(255,255,255,0.65);backdrop-filter:blur(6px)}
+  .shadow-soft{box-shadow:0 10px 30px rgba(11,15,27,0.07)}
+  .price-badge{background:linear-gradient(90deg,#ffd1e6, #b76bae);color:white}
+
+  /* 🔧 ARREGLO RELOJ HORA ANDROID */
+  .hora-field{
+    display:flex;
+    flex-direction:column;
+    font-size:14px;
+  }
+
+  .hora-field input[type="time"]{
+    margin-top:6px;
+    padding:14px;
+    font-size:16px;      /* CLAVE */
+    border-radius:12px;
+    border:1px solid #ccc;
+    height:52px;         /* CLAVE */
+    line-height:1.2;
+    width:100%;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+</style>
+
 </head>
 
 
@@ -106,32 +127,49 @@
           <label class="flex flex-col text-sm"><span>Teléfono / WhatsApp</span><input required name="phone" class="mt-1 p-3 rounded-md border" placeholder="Ej. 55 1234 5678"></label>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-3">
-          <label class="flex flex-col text-sm"><span>Servicio</span>
-            <select required name="service" class="mt-1 p-3 rounded-md border">
-              <option value="Manicura clásica">Manicura clásica — $150</option>
-              <option value="Manicura gel">Uñas Acrilicas — $200</option>
-              <option value="Acrílico completo">Pedicura (Acripie) — $180</option>
-            </select>
-          </label>
-          <label class="flex flex-col text-sm"><span>Fecha</span><div id="calendario" class="grid grid-cols-7 gap-1 text-center text-xs my-2"></div>
-  <div>
- <div class="flex flex-wrap gap-4 justify-center items-center mb-4 text-sm font-semibold">
+     <div class="grid md:grid-cols-3 gap-3">
+
+  <!-- SERVICIO -->
+  <label class="flex flex-col text-sm">
+    <span>Servicio</span>
+    <select required name="service" class="mt-1 p-3 rounded-md border">
+      <option value="Manicura clásica">Manicura clásica — $150</option>
+      <option value="Uñas Acrilicas">Uñas Acrilicas — $200</option>
+      <option value="Pedicura (Acripie)">Pedicura (Acripie) — $180</option>
+    </select>
+  </label>
+
+  <!-- FECHA -->
+  <label class="flex flex-col text-sm">
+    <span>Fecha</span>
+
+    <div class="flex flex-wrap gap-4 justify-center items-center mb-4 text-sm font-semibold">
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-green-500"></span>
         <span class="text-gray-700">Disponible</span>
       </div>
-
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-orange-400"></span>
         <span class="text-gray-700">Citas agotadas</span>
       </div>
-
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-red-500"></span>
         <span class="text-gray-700">No hay cita</span>
       </div>
     </div>
+
+    <div id="calendario" class="grid grid-cols-7 gap-2"></div>
+    <input required type="date" name="date" class="mt-2 p-3 rounded-md border">
+  </label>
+
+  <!-- HORA (ARREGLADA) -->
+  <label class="hora-field">
+    <span>Hora</span>
+    <input required type="time" name="time">
+  </label>
+
+</div>
+
 
     <!-- CALENDARIO -->
     <div id="calendario" class="grid grid-cols-7 gap-2"></div>
@@ -318,6 +356,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
