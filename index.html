@@ -282,17 +282,30 @@ generarCalendario();
     const clearBtn = document.getElementById('clearBtn');
 
     bookingForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const f = new FormData(bookingForm);
-      const data = Object.fromEntries(f.entries());
-      const txt = `Reserva: \nNombre: ${data.name}\nTel: ${data.phone}\nServicio: ${data.service}\nFecha: ${data.date} Hora: ${data.time}\nNotas: ${data.notes || '-'} `;
-      summaryContent.textContent = txt.replace(/\n/g,'\n');
-      // Build WhatsApp link (pre-filled message)
-      const waText = encodeURIComponent(txt + '\n¡Gracias!');
-      whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
-      summary.classList.remove('hidden');
-      // scroll removed
-    });
+  e.preventDefault();
+
+  const f = new FormData(bookingForm);
+  const data = Object.fromEntries(f.entries());
+
+  const txt =
+`Reserva:
+Nombre: ${data.name}
+Tel: ${data.phone}
+Servicio: ${data.service}
+Fecha: ${data.date} Hora: ${data.time}
+Notas: ${data.notes || '-'}
+
+📸 Manda tu foto para cotizar tu diseño 💅`;
+
+  summaryContent.textContent = txt.replace(/\n/g, '\n');
+
+  // Build WhatsApp link (pre-filled message)
+  const waText = encodeURIComponent(txt + '\n¡Gracias!');
+  whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
+
+  summary.classList.remove('hidden');
+});
+
 
     copyBtn.addEventListener('click', ()=>{
       navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
@@ -315,6 +328,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
