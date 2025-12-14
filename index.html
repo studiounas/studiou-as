@@ -198,7 +198,7 @@ generarCalendario();
          <label class="flex flex-col text-sm"><span>Hora</span><input required type="time" name="time" class="mt-1 p-1 rounded-md border"></label>
         </div>
 
-        <label class="flex flex-col text-sm"><span>Notas / Diseño (opcional)</span><textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border" placeholder="Ej. Me gustaría color nude con brillo"></textarea></label>
+        <label class="flex flex-col text-sm"><span> Diseño (opcional)</span><textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border" placeholder="Ej. Me gustaría color nude con brillo"></textarea></label>
 
         <div class="flex gap-3 items-center">
           <button type="submit" class="px-5 py-3 rounded-full bg-[var(--accent)] text-white font-semibold shadow">Confirmar cita</button>
@@ -293,7 +293,7 @@ generarCalendario();
 📱Tel: ${data.phone}
 💅🏼Servicio: ${data.service}
 🗓️Fecha: ${data.date} 🕓Hora: ${data.time}
-✨Notas: ${data.notes || '-'}
+✨Diseño: ${data.notes || '-'}
 
 📸 Manda tu foto para cotizar tu diseño 💅`;
 
@@ -328,6 +328,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
