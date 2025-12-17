@@ -64,38 +64,19 @@
    
     
     <!-- Galería -->
-    <section id="galeria" class="mb-12 flex justify-center">
-  <div class="w-full max-w-6xl text-center">
-
-    <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
-
-    <p class="text-sm text-[var(--muted)] mb-6">
-      Toca cualquier imagen para verla ampliada. Inspírate y elige tu estilo.
-    </p>
-
-  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 place-items-center">
-
-      <!-- Template de imagen -->
- <template id="img-template">
-  <div class="relative group rounded-xl overflow-hidden cursor-pointer w-full max-w-[170px] mx-auto">
-    <img
-      class="w-full h-40 object-cover transform group-hover:scale-105 transition"
-      loading="lazy"
-    >
-    <div
-      class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition
-             flex items-center justify-center text-white text-sm">
-      Ver
-    </div>
-  </div>
-</template>
-
-
-     
-    </div>
-
-  </div>
-</section>
+    <section id="galeria" class="mb-12">
+      <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
+      <p class="text-sm text-[var(--muted)] mb-6">Toca cualquier imagen para verla ampliada. Inspírate y elige tu estilo.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <!-- 8 imágenes de ejemplo -->
+        <template id="img-template">
+          <div class="relative group rounded-xl overflow-hidden cursor-pointer">
+            <img class="w-full h-40 object-cover transform group-hover:scale-105 transition" loading="lazy">
+            <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">Ver</div>
+          </div>
+        </template>
+      </div>
+    </section>
 
 
     <!-- Formulario de reserva -->
@@ -348,6 +329,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
