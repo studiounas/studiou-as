@@ -1,333 +1,702 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Nails studio— Citas de Uñas</title>
-  <meta name="description" content="Reserva tu cita de uñas: manicura, pedicura, gel, acrílico. Precios claros, galería y reserva rápida." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Tailwind CDN (para prototipo premium) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    :root{--accent:#b76bae;--muted:#6b7280}
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    .glass{background:rgba(255,255,255,0.65);backdrop-filter:blur(6px)}
-    .shadow-soft{box-shadow:0 10px 30px rgba(11,15,27,0.07)}
-    .price-badge{background:linear-gradient(90deg,#ffd1e6, #b76bae);color:white}
-  </style>
-</head>
-
-
-
-
-<body class="bg-gradient-to-b from-white to-rose-50 min-h-screen text-slate-900">
-  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <div class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-purple-500 text-white font-bold shadow-md">Y</div>
-      <div>
-        <h1 class="text-xl font-semibold">Nails Studio </h1>
-        <p class="text-sm text-[var(--muted)]">Citas de uñas · Manicura · Pedicura · Acripie · Baño de Acrílico</p>
-      </div>
-    </div>
-    <nav class="hidden md:flex gap-6 items-center text-sm">
-      <a href="#servicios" class="hover:underline">Servicios</a>
-      <a href="#galeria" class="hover:underline">Galería</a>
-     
-      <a href="#reservar" class="py-2 px-4 rounded-full bg-[var(--accent)] text-white shadow">Reservar cita</a>
-    </nav>
-  </header>
-
-<main class="max-w-6xl mx-auto px-6 pb-20"> 
-  <!-- Hero --> 
-  <section class="grid md:grid-cols-2 gap-8 items-center mb-10">
-    <div class="glass p-8 rounded-2xl shadow-soft"> <h2 class="text-3xl md:text-4xl font-extrabold">
-      Luce unas bonitas uñas Reserva tu cita</h2> <p class="mt-3 text-[var(--muted)]">Diseños personalizados Elige tu servicio fecha y hora.</p> <ul class="mt-6 grid grid-cols-2 gap-3 text-sm"> 
-        <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Manicura pedicura</li> <li class="flex gap-3 items-start">
-          <span class="font-semibold">✔</span> Acripie Baño de acrilico</li> <li class="flex gap-3 items-start">
-            <span class="font-semibold">✔</span> Uñas acrilicas con tip</li> <li class="flex gap-3 items-start">
-              <span class="font-semibold">✔</span> Retiro Retoque</li> </ul> <div class="flex gap-3 mt-6"> <a href="#reservar" class="inline-flex items-center gap-2 bg-[var(--accent)] 
-              text-white px-5 py-3 rounded-full shadow">Reservar ahora</a> <a href="#galeria" class="inline-flex items-center gap-2 border px-5 py-3 rounded-full">Ver diseños</a> 
-              </div> </div> </section> <!-- Servicios + Precios destacados --> <section id="servicios" class="grid lg:grid-cols-3 gap-6 mb-12"> <div class="glass p-6 rounded-2xl shadow-soft">
-                <h3 class="text-xl font-semibold">Servicios populares</h3> <p class="text-sm text-[var(--muted)] mt-2">Elige el servicio que prefieras. Si quieres un diseño personalizado, escribe en Diseño al reservar.</p>
-                <ul class="mt-4 space-y-3 text-sm"> <li class="flex justify-between items-center"><div><strong>Manicura clásica</strong><div class="text-[var(--muted)] text-xs"></div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$150</span>
-                </li> <li class="flex justify-between items-center"><div><strong>Uñas Acrilicas</strong><div class="text-[var(--muted)] text-xs"></div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$200</span>
-                </li> <li class="flex justify-between items-center"><div><strong>Pedicura (Acripie) </strong><div class="text-[var(--muted)] text-xs"></div></div><span class="price-badge px-3 py-1 rounded-full text-sm">$180</span></li> 
-                </ul> </div> </section>
-  
-
-</main>
-
-  
-<!-- paquetes premium -->
-   
-    
-    <!-- Galería -->
-     <section id="galeria" class="mb-12">
-      <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
-      <p class="text-sm text-[var(--muted)] mb-6">Toca cualquier imagen para verla ampliada. Inspírate y elige tu estilo.</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <!-- 8 imágenes de ejemplo -->
-        <template id="img-template">
-          <div class="relative group rounded-xl overflow-hidden cursor-pointer">
-            <img class="w-full h-40 object-cover transform group-hover:scale-105 transition" loading="lazy">
-            <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">Ver</div>
-          </div>
-        </template>
-      </div>
-    </section>
-
-
-    <!-- Formulario de reserva -->
-    <section id="reservar" class="glass p-6 rounded-2xl shadow-soft max-w-3xl mx-auto">
-      <h3 class="text-2xl font-semibold">Reservar cita</h3>
-      <p class="text-sm text-[var(--muted)] mb-4">Completa los datos y revisa el resumen antes de confirmar. (Esta página usa simulación local — conecta con tu backend cuando lo necesites.)</p>
-      <form id="bookingForm" class="grid gap-3">
-        <div class="grid md:grid-cols-2 gap-3">
-          <label class="flex flex-col text-sm"><span>Nombre completo</span><input required name="name" class="mt-1 p-3 rounded-md border" placeholder="Ej. María Pérez"></label>
-          <label class="flex flex-col text-sm"><span>Teléfono / WhatsApp</span><input required name="phone" class="mt-1 p-3 rounded-md border" placeholder="Ej. 55 1234 5678"></label>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-3">
-          <label class="flex flex-col text-sm"><span>Servicio</span>
-            <select required name="service" class="mt-1 p-3 rounded-md border">
-              <option value="Manicura clásica">Manicura clásica — $150</option>
-              <option value="Manicura gel">Uñas Acrilicas — $200</option>
-              <option value="Acrílico completo">Pedicura (Acripie) — $180</option>
-            </select>
-          </label>
-          <label class="flex flex-col text-sm"><span>Fecha</span><div id="calendario" class="grid grid-cols-7 gap-1 text-center text-xs my-2"></div>
-  <div>
- <div class="flex flex-wrap gap-4 justify-center items-center mb-4 text-sm font-semibold">
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-green-500"></span>
-        <span class="text-gray-700">Disponible</span>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-orange-400"></span>
-        <span class="text-gray-700">Citas agotadas</span>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-        <span class="text-gray-700">No hay cita</span>
-      </div>
-    </div>
-
-    <!-- CALENDARIO -->
-    <div id="calendario" class="grid grid-cols-7 gap-2"></div>
-
-  </div>
-
-<script>
-
-function generarCalendario() {
-  const cal = document.getElementById('calendario');
-  cal.innerHTML = '';
-
-  const hoy = new Date();
-  const año = hoy.getFullYear();
-  const mes = hoy.getMonth();
-  const primerDia = new Date(año, mes, 1).getDay();
-  const ultimoDia = new Date(año, mes + 1, 0).getDate();
-  const nombresDias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-
-  // Días configurados
-  const diasVerdes  = [,16,17,18,19,20,22,23,24,25 ,26,27,29,30,31]; // Verde → Disponible
-  const diasNaranja = [,15 , , ];            // Naranja → Citas agotadas
-  const diasRojos   = [,14,21,28, ];               // Rojo → No hay cita
-
-  // Encabezados de días
-  nombresDias.forEach(d => {
-    const h = document.createElement('div');
-    h.textContent = d;
-    h.className = 'font-bold text-center text-gray-700';
-    cal.appendChild(h);
-  });
-
-  // Offset para el primer día del mes
-  let offset = primerDia === 0 ? 6 : primerDia - 1;
-  for(let i = 0; i < offset; i++){
-    cal.appendChild(document.createElement('div'));
-  }
-
-  // Días del mes
-  for(let dia = 1; dia <= ultimoDia; dia++){
-    const c = document.createElement('div');
-    c.textContent = dia;
-    c.className = 'p-2 rounded-lg text-center border cursor-pointer';
-
-    if(diasVerdes.includes(dia)){
-      c.classList.add('bg-green-400','text-white','shadow-lg'); // Verde: Disponible
-    } else if(diasNaranja.includes(dia)){
-      c.classList.add('bg-orange-400','text-white','shadow-md'); // Naranja: Citas agotadas
-    } else if(diasRojos.includes(dia)){
-      c.classList.add('bg-red-500','text-white','opacity-80','shadow-sm'); // Rojo: No hay cita
-    } else {
-      c.classList.add('bg-gray-200'); // Gris: No configurado
-    }
-
-    cal.appendChild(c);
-  }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sdmex - Créditos Premium</title>
+<meta name="description" content="Recarga créditos para Fast TV y disfruta contenido ilimitado con activación inmediata vía WhatsApp." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --accent: #e11d48;
+  --accent-2: #1e40af;
+  --bg: #0b0f1a;
+  --card: rgba(15,23,30,0.85);
+  --muted: #94a3b8;
+  --glass: rgba(255,255,255,0.03);
+  --transition-speed: 0.35s;
 }
 
-// Generar calendario al cargar
-generarCalendario();
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* BODY y FONDO */
+body{
+  font-family:'Inter',sans-serif;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 0, 64, 0.4), transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(0, 80, 255, 0.45), transparent 60%),
+              linear-gradient(180deg, #0b0f1a 0%, #01040a 100%);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  background-blend-mode: screen;
+  animation: moverFondo 16s ease-in-out infinite;
+  color:#e6eef8;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  min-height:100vh;
+  width:100%;
+  margin:0 auto;
+  display:block;
+  padding-bottom:40px;
+}
 
-</script><span>🗓️Calendario</span><input required type="date" name="date" min="${new Date().toISOString().split('T')[0]}" class="mt-1 p-3 rounded-md border"></label>
-         <label class="flex flex-col text-sm"><span>🕓Hora</span><input required type="time" name="time" class="mt-1 p-1 rounded-md border"></label>
-        </div>
+/* Animación suave del fondo */
+@keyframes moverFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-        <label class="flex flex-col text-sm"><span> 💅🏼Diseño (opcional)</span><textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border" placeholder="Ej. Me gustaría color nude con brillo"></textarea></label>
+/* CANVAS DE PARTICULAS (placeholder) */
+canvas#bgCanvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;}
 
-        <div class="flex gap-3 items-center">
-          <button type="submit" class="px-5 py-3 rounded-full bg-[var(--accent)] text-white font-semibold shadow">Confirmar cita</button>
-          <button type="button" id="clearBtn" class="px-4 py-3 rounded-full border">Limpiar</button>
-          <div class="ml-auto text-sm text-[var(--muted)]"></div>
-        </div>
-      </form>
+/* HEADER */
+.header-wrapper{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:999;
+  display:flex;
+  justify-content:center;
+  padding:8px;
+}
+header{
+  width:100%;
+  max-width:1200px;
+  background: rgba(15, 23, 30, 0.2);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding:12px 20px;
+  transition: background 0.4s ease;
+  margin:8px;
+  border-radius:12px;
+}
+header:hover { background: rgba(15, 23, 30, 0.35); }
+.logo{display:flex;align-items:center;gap:10px;}
+nav{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{
+  padding:10px 18px;border-radius:12px;font-weight:600;cursor:pointer;
+  border:none;color:white;text-decoration:none;display:inline-block;
+  background: var(--accent); transition: all 0.3s ease, box-shadow 0.6s;
+}
+.btn:hover{
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:0 0 28px var(--accent),0 0 56px var(--accent-2);
+}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.2);}
+.btn.promocion{background:#ff6f61;}
+.btn.bbva{background:#004481;}
+.btn.mercado{background:#009ee3;}
 
-      <div id="summary" class="mt-6 hidden p-4 border rounded-md bg-white">
-        <h4 class="font-semibold">Resumen de la reserva</h4>
-        <div id="summaryContent" class="text-sm mt-2"></div>
-        <div class="mt-4 flex gap-3">
-          <button id="copyBtn" class="px-4 py-2 rounded bg-slate-100">Copiar resumen</button>
-          <a id="whatsappBtn" class="px-4 py-2 rounded bg-green-600 text-white" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+/* CONTENEDOR PRINCIPAL CENTRADO */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 150px auto 40px; /* espacio para header fijo */
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* DESLIZANTES (logos e imágenes) */
+.deslizante, .fila-abajo {
+    width: 85%;
+    overflow: hidden;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    padding: 25px 0;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    margin-top: 30px;
+    border-radius: 14px;
+}
+
+.deslizante-track, .fila-abajo-track {
+    display: flex;
+    gap: 40px;
+    animation: moverDerecha 20s linear infinite;
+}
+
+.deslizante-track img {
+    height: 50px;
+    border-radius: 12px;
+    transition: 0.0s;
+}
+.fila-abajo-track img {
+    height: 250px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+.deslizante-track img:hover, .fila-abajo-track img:hover { transform: scale(1.05); }
+
+@keyframes moverDerecha {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0%); }
+}
+
+/* HERO */
+.hero{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;justify-content:center;width:100%;}
+.hero-left{flex:1;animation:fadeInUp 1s ease forwards;opacity:0;max-width:900px;margin:0 auto;text-align:center;}
+.hero-left h1{
+  font-size:32px;
+  margin-bottom:12px;
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-left p{color:var(--muted); margin-bottom:18px;}
+
+/* CARD */
+.card{
+  background: var(--card);
+  border-radius:16px;
+  padding:22px;
+  box-shadow:0 10px 28px rgba(2,6,23,0.8);
+  border:1px solid rgba(255,255,255,0.03);
+  transition: all 0.4s ease;
+  transform: translateY(20px);
+  opacity:0;
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+  width:100%;
+  max-width:900px;
+}
+.card.show{opacity:1; transform:translateY(0);}
+.card::before{
+  content:"";
+  position:absolute; top:-50%; left:-50%;
+  width:200%; height:200%;
+  background: linear-gradient(120deg, rgba(255,29,72,0.08), rgba(30,64,175,0.08), rgba(255,29,72,0.08));
+  animation: rotateGlow 10s linear infinite;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes rotateGlow{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+/* SISTEMA DE CALIFICACIÓN */
+.rating-container { text-align: center; margin-top: 10px; }
+.stars { display: flex; justify-content: center; gap: 8px; margin-bottom: 8px; }
+.star { font-size: 34px; color: rgba(255,255,255,0.18); cursor: pointer; transition: transform 0.2s ease, color 0.2s; }
+.star.active, .star:hover { color: gold; transform: scale(1.15); text-shadow: 0 0 12px gold, 0 0 22px var(--accent); }
+.rating-text { font-size: 14px; color: var(--muted); margin-top: 6px; }
+.rating-message { font-size: 15px; color: gold; opacity: 0; transition: opacity 0.5s; font-weight: bold; margin-top: 6px; }
+
+/* FEATURES & PACKAGES */
+.features{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;justify-content:center;}
+.feature{padding:10px 14px;border-radius:12px;background:var(--glass);
+border:1px solid rgba(255,255,255,0.02);font-size:14px;transition:all 0.3s;}
+.feature:hover{background: rgba(255,255,255,0.08); transform: translateY(-2px);}
+
+.packages{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;margin-top:16px;
+  justify-items:center;
+  width:100%;
+}
+.package{
+  padding:20px;border-radius:16px;text-align:center;
+  border:1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  position:relative; overflow:hidden; cursor:pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+  max-width:260px;width:100%;
+}
+.package:hover{transform: translateY(-10px) scale(1.02);
+  box-shadow:0 0 38px var(--accent),0 0 70px var(--accent-2);
+}
+.package .description{opacity:0; transform:translateY(8px); transition: all 0.35s; color:var(--muted); }
+.package:hover .description{opacity:1; transform:translateY(0);}
+
+/* INFO ROW & FOOTER */
+.info-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;justify-content:center;}
+.info-item{flex:1;min-width:220px;max-width:420px;}
+
+footer{
+  margin-top:32px;padding:20px;border-radius:12px;background: rgba(255,255,255,0.02);
+  display:flex;justify-content: space-between; flex-wrap:wrap; color:var(--muted); font-size:13px;
+  width:100%;max-width:900px;margin-inline:auto;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;
+background:#25D366;display:flex;justify-content:center;align-items:center;
+font-size:26px;color:white;box-shadow:0 8px 24px rgba(2,6,23,0.7);transition: transform 0.3s, box-shadow 0.3s; z-index:1000;}
+.whatsapp:hover{transform: scale(1.12); box-shadow:0 12px 36px rgba(2,6,23,0.85);}
+
+/* ANIMACIONES */
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-left h1 {font-size:24px;}
+  nav {flex-direction: row;flex-wrap: wrap;justify-content: center;}
+  .btn {font-size: 13px;padding: 6px 10px;border-radius: 8px;}
+  .package {max-width:100%;}
+  header{flex-direction:column;gap:8px;align-items:center;}
+  .container { margin-top: 170px; }
+}
+</style>
+</head>
+<body>
+</style>
+</head>
+<body>
+
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+
+<!-- Header fijo -->
+<div class="header-wrapper"> 
+  <header>
+    <div class="logo">
+      <img src="https://image.roku.com/developer_channels/prod/677ad465d64b71c4dbf44edbdaa7be9a0c3faf6da47819faefc35227cdff40d3.png" 
+           alt="Sdmex" style="height:40px; width:auto;">
+      <div style="line-height:1;">
+        <div style="font-weight:800;">Sdmex</div>
+        <div style="font-size:12px;color:var(--muted)">Todo en solo lugar</div>
+      </div>
+    </div>
+
+    <nav>
+      <a class="btn promocion" href="#promocion">Promoción</a>
+      <a class="btn" href="#credits">Comprar créditos</a>
+      <a class="btn secondary" href="#benefits">Beneficios</a>
+    </nav>
+
+  </header>
+</div>
+
+<!-- Contenedor principal centrado -->
+<div class="container">
+<!-- HERO -->
+  <section class="hero-left">
+    <h1>Mira TV, Series y Películas en cualquier momento y en cualquier lugar.</h1>
+    <p>Conéctate y Suscríbete con nosotros y se parte de la Plataforma más completa y estable del mercado</p>
+    <p>Compra paquetes y recibe tu acceso activado vía WhatsApp en minutos.</p>
+  </section>
+
+  <!-- TARJETAS / PAQUETES -->
+  <div class="card show">
+    <div style="display:flex; flex-direction:column; gap:12px; align-items:center;">
+      <div style="font-weight:700;">1 crédito = 1 mes</div>
+      <div style="color:var(--muted);font-size:14px;">Compatible con TV Box, Fire Stick, Android TV, Chromecast, Roku</div>
+      <div style="font-size:13px;color:var(--muted);">Pagos 100% seguros — activamos entre 5 y 10 minutos</div>
+    </div>
+    <div class="features">
+      <div class="feature">+2,000 canales</div>
+      <div class="feature">+19,000 películas</div>
+      <div class="feature">+5,000 series</div>
+      <div class="feature">Deportes en vivo</div>
+    </div>
+  </div>
+
+  <!-- DESLIZANTES / IMÁGENES -->
+  <div class="deslizante" aria-hidden="true">
+    <div class="deslizante-track">
+      <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item06-150x46-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item18-150x46-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item21-150x46-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item08-150x46-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item13-150x46-1-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item15-150x46-1-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item14-150x46-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/dazn-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/FOX-1-150x58.png" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/espn-1-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/laliga-1-1-150x50.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/premier-league-1-1-150x65.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/brand_item12-1.webp" alt="">
+    </div>
+  </div>
+<!-- HERO -->
+  <section class="hero-left">
+<h1 style="margin-top:28px;">Explora y disfruta de los estrenos más recientes</h1>
+</section>
+      <div class="fila-abajo" aria-hidden="true">
+        <div class="fila-abajo-track">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0019_MV5BODVkYjlkM2UtNWVlMS00N2U1LTgxOTYtODlmNmE1YTgzMjczXkEyXkFqcGc@._V1_.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0028_e4cd101f2e66f4e7818fcf53d05c006a.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0029_1709345318591_HO00000433.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0031_4463018.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0035_91ok1ACU4IL._AC_UF10001000_QL80_-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/the-last-of-us-2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/black-bird.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/game-of-thrones.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0000_IMG_3933.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0003_IMG_3930.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0011_IMG_3922.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0012_IMG_3921.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/synciptv-_0020_MV5BNzY0ZTlhYzgtOTgzZC00ZTg2LTk4NTEtZDllM2E2NGE5Njg2XkEyXkFqcGc@._V1_FMjpg_UX1000_.webp" alt="">
         </div>
       </div>
-    </section>
 
-    <!-- Testimonios y contacto -->
-    <section class="mt-10">
-  <div class="max-w-3xl mx-auto">
-    <div class="glass p-6 rounded-2xl shadow-soft text-center">
-      <h4 class="text-lg font-semibold">Contacto</h4>
+      <video width="85%" controls style="margin-top:18px; border-radius:12px; overflow:hidden;">
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+      </video>
 
-      <p class="text-sm text-[var(--muted)] mt-2">
-        Cualquier duda escríbenos por WhatsApp o llámanos.
-      </p>
+<!-- HERO -->
+  <section class="hero-left">   
+<h1 style="margin-top:28px;">Las Mejores Ligas Y Deportes De Todo El Mundo</h1>
+  </section>
 
-      <p class="mt-4 font-semibold">
-        WhatsApp:
-        <a href="https://wa.me/522321364743"
-           target="_blank"
-           class="text-[var(--accent)]">
-          +52 232 136 4743
-        </a>
-      </p>
 
-      <p class="text-sm text-[var(--muted)] mt-4">
-        Dirección: San Rafael, Col. Gustavo del Valle
-      </p>
+      <div class="fila-abajo" aria-hidden="true" style="margin-bottom:20px;">
+        <div class="fila-abajo-track">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tennis-3.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv1-768x1039-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv10d_372cc453a2994aaa901005c9f33c95b2_mv2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv10d_cf3be583460f4052882425a9e47b4adc_mv2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv10d_ec383b588bad493cb5fcc36cfe69c76d_mv2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv10d_ff2b6edbcb05496aa78e5c8a2627c6c3_mv2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/tv-768x1039-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/4.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/6-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/neo-11.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/rigbi.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/Sans-titre-7-1-768x1039-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/Sans-titre-9-1-1-768x1039-1.webp" alt="">
+        </div>
+      </div>
+
+
+          
+      <div class="deslizante" aria-hidden="true">
+        <div class="deslizante-track">
+          <img src="" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/espn-plus-negro-300x169-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/FOXNOW-300x120-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/images-1-300x156-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/images-2.png" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/picte-2-300x300-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/picte-4-300x300-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/picture-11.png-300x300-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-2.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-3.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-9.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-10.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/streaming-sports-movie-hd-premium-music-documentary-channels-iptv-adult-content-tv-channel-12.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/WHITE_RGB-1-300x184-1.webp" alt="">
+          <img src="https://media-play.net/wp-content/uploads/2025/06/WhatsApp-Image-2023-10-31-at-03.02.39_d463e940.webp" alt="">
+        </div>
+      </div>
+
+   
+ <!-- PAQUETES -->
+  <div id="credits" class="card show" style="margin-top:18px;">
+    <h2>Paquetes de créditos</h2>
+    <p style="color:var(--muted);">Selecciona un paquete y compra mediante WhatsApp o Mercado Pago.</p>
+
+    <div class="packages">
+      <div class="package">
+        <h3>1 Crédito</h3>
+        <div class="price" style="font-weight:700;margin:8px 0;">$140 MXN</div>
+        <p class="description">1 mes de acceso completo a todos los canales.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+          <a class="btn mercado" href="https://mpago.la/2yVCgh2" target="_blank" rel="noopener">💳 Mercado Pago</a>
+          <a class="btn bbva" href="https://wa.me/522321452268?text=Hola,%20quiero%20pagar%20por%20BBVA%20el%20paquete%20de%201%20crédito." target="_blank" rel="noopener">🏦 BBVA</a>
+        </div>
+      </div>
+
+      <div class="package">
+        <h3>3 Créditos</h3>
+        <div class="price" style="font-weight:700;margin:8px 0;">$360 MXN</div>
+        <p class="description">Ahorra $40 y disfruta 3 meses de contenido ilimitado.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+          <a class="btn mercado" href="https://mpago.la/2z6QZCW" target="_blank" rel="noopener">💳 Mercado Pago</a>
+          <a class="btn bbva" href="https://wa.me/522321452268?text=Hola,%20quiero%20pagar%20por%20BBVA%20el%20paquete%20de%203%20créditos." target="_blank" rel="noopener">🏦 BBVA</a>
+        </div>
+      </div>
+
+      <div class="package">
+        <h3>6 Créditos</h3>
+        <div class="price" style="font-weight:700;margin:8px 0;">$660 MXN</div>
+        <p class="description">Ahorra $130 y disfruta 6 meses de contenido premium.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+          <a class="btn mercado" href="https://mpago.la/2ExEasd" target="_blank" rel="noopener">💳 Mercado Pago</a>
+          <a class="btn bbva" href="https://wa.me/522321452268?text=Hola,%20quiero%20pagar%20por%20BBVA%20el%20paquete%20de%206%20créditos." target="_blank" rel="noopener">🏦 BBVA</a>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-  </main>
-
-  <footer class="mt-12 py-6 border-t bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-sm flex justify-between items-center">
-      <div>© <span id="year"></span> Studio Uñas · Todos los derechos reservados</div>
-      <div class="text-[var(--muted)]">Diseño premium · Página responsive</div>
+  <!-- PAQUETE PRESENCIAL -->
+  <div id="presencial" class="card show" style="margin-top:16px;">
+    <h2>Paquete presencial</h2>
+    <p style="color:var(--muted);">Haz tu pago por medio de Mercado Pago o BBVA y activa mediante WhatsApp en tienda.</p>
+    <div class="packages">
+      <div class="package">
+        <h3>1 Mes - Incluye TV Box y Fast TV Premium</h3>
+        <div class="price" style="font-weight:700;margin:8px 0;">$200 MXN</div>
+        <p class="description">1 mes de acceso completo a todos los canales.</p>
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+          <a class="btn mercado" href="https://mpago.li/2gBjeUo" target="_blank" rel="noopener">💳 Mercado Pago</a>
+          <a class="btn bbva" href="https://wa.me/522321452268?text=Hola,%20quiero%20pagar%20por%20BBVA%20el%20paquete%20presencial." target="_blank" rel="noopener">🏦 BBVA</a>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+
+   <!-- Soporte -->
+  <section id="soporte" class="card show" style="margin-top:22px; width:100%;">
+    <h3>Soporte</h3>
+    <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+      <li>Problemas de conexión o acceso a tu cuenta.</li>
+      <li>Fallas en la reproducción o cortes en la señal.</li>
+      <li>Instalación y configuración de tu aplicación o dispositivo.</li>
+      <li>Renovación de servicio.</li>
+    </ul>
+    <div style="margin-top:12px;">
+      <a class="btn secondary" style="margin-left:8px" href="https://wa.me/522321452268?text=Hola,%20vengo%20desde%20la%20página%20web%20y%20necesito%20soporte%20para%20Fast%20TV.">Soporte</a>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section id="benefits" class="card show" style="margin-top:24px; width:100%;">
+    <h3>Beneficios</h3>
+    <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted)">
+      <li>Compatible con múltiples dispositivos</li>
+      <li>Entrega rápida y activación vía WhatsApp</li>
+      <li>Planes flexibles y descuentos en paquetes</li>
+    </ul>
+  </section>
+
+  <!-- RATING / RESEÑAS -->
+  <section id="rating" class="card show" style="margin-top:24px; width:100%;">
+    <h3>Califica esta página</h3>
+
+    <div class="rating-container">
+      <div class="stars" aria-hidden="false" role="radiogroup">
+        <span class="star" data-value="1" role="radio" aria-checked="false">★</span>
+        <span class="star" data-value="2" role="radio" aria-checked="false">★</span>
+        <span class="star" data-value="3" role="radio" aria-checked="false">★</span>
+        <span class="star" data-value="4" role="radio" aria-checked="false">★</span>
+        <span class="star" data-value="5" role="radio" aria-checked="false">★</span>
+      </div>
+      <div id="ratingMessage" class="rating-message">¡Gracias por tu calificación!</div>
+    </div>
+
+    <div style="margin-top:20px; text-align:center;">
+      <textarea id="experienceInput" placeholder="Describe tu experiencia..." rows="3"
+        style="width:90%;max-width:500px;border-radius:12px;padding:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;"></textarea><br>
+      <button id="saveExperience" class="btn" style="margin-top:10px;">Enviar reseña</button>
+      <div id="savedMessage" style="color:gold;margin-top:8px;opacity:0;transition:opacity 0.4s;">Gracias por tu opinión</div>
+    </div>
+
+    <!-- Opiniones -->
+    <div id="reviewsContainer" style="margin-top:20px;">
+      <h4>Opiniones de otros clientes</h4>
+      <div id="reviewsList" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="width:100%; max-width:1100px;">
+    <div>
+      <strong>Fast TV Créditos</strong>
+      <div>© 2025 Fast TV Todos los derechos reservados · Términos y Privacidad</div>
+    </div>
+    <div style="color:var(--muted)"><a href="#" style="color:var(--muted);text-decoration:none;"></a></div>
   </footer>
 
-  <!-- Modal / Lightbox -->
-  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
-    <div class="max-w-3xl w-full p-4">
-      <button id="closeLb" class="mb-4 text-white">Cerrar ✕</button>
-      <img id="lbImg" src="" alt="" class="w-full rounded-lg shadow-lg">
-    </div>
-  </div>
+</div> <!-- cierre .container -->
 
-  <script>
- // Fill gallery with sample images (Unsplash curated links)
-    const galleryUrls = [
-      'imagen1.jpeg',
-      'imagen2.jpeg',
-      'imagen3.jpeg',
-      'imagen4.jpeg',
-      'imagen5.jpeg',
-    ];
-    const grid = document.querySelector('#galeria .grid');
-    const tmpl = document.getElementById('img-template');
-    galleryUrls.forEach(url => {
-      const node = tmpl.content.cloneNode(true);
-      const img = node.querySelector('img');
-      img.src = url;
-      img.alt = 'Diseño de uñas';
-      const wrapper = node.querySelector('div');
-      wrapper.addEventListener('click', () => openLightbox(url));
-      grid.appendChild(node);
+<!-- WhatsApp flotante -->
+<a class="whatsapp" href="https://wa.me/522321452268" aria-label="WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png" alt="WhatsApp" style="width:28px; height:28px;">
+</a>
+
+<!-- SCRIPTS -->
+<script>
+/*
+  IMPORTANTE: conserva tu URL de Apps Script aquí.
+  Si no quieres usar el script, modifica fetch(...) o comenta las llamadas.
+*/
+const scriptURL = "https://script.google.com/macros/s/AKfycbz99-Te-MYv1cLO5vUeD32VqFaKJ26R9uIZL30aIc-w8D2AJSjoIRpuK0f0U8mmOw8jfg/exec";
+
+const stars = document.querySelectorAll('.star');
+const msg = document.getElementById('ratingMessage');
+const textarea = document.getElementById('experienceInput');
+const saveBtn = document.getElementById('saveExperience');
+const savedMsg = document.getElementById('savedMessage');
+const reviewsList = document.getElementById('reviewsList');
+
+let selectedRating = 0;
+
+// --- Calificación por estrellas ---
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    selectedRating = Number(star.dataset.value);
+    stars.forEach(s => {
+      const active = Number(s.dataset.value) <= selectedRating;
+      s.classList.toggle('active', active);
+      s.setAttribute('aria-checked', active ? "true" : "false");
     });
-
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    function openLightbox(url){ lbImg.src = url; lightbox.classList.remove('hidden'); document.body.style.overflow='hidden'; }
-    document.getElementById('closeLb').addEventListener('click', closeLb);
-    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
-    function closeLb(){ lightbox.classList.add('hidden'); lbImg.src=''; document.body.style.overflow='auto'; }
-
-    // Booking form logic (client-side simulation)
-    const bookingForm = document.getElementById('bookingForm');
-    const summary = document.getElementById('summary');
-    const summaryContent = document.getElementById('summaryContent');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const clearBtn = document.getElementById('clearBtn');
-
-    bookingForm.addEventListener('submit', (e)=>{
-  e.preventDefault();
-
-  const f = new FormData(bookingForm);
-  const data = Object.fromEntries(f.entries());
-
-  const txt =
-`*Reserva:*
-👩🏼‍💼Nombre: ${data.name}
-📱Tel: ${data.phone}
-💅🏼Servicio: ${data.service}
-🗓️Fecha: ${data.date} 🕓Hora: ${data.time}
-✨Diseño: ${data.notes || '-'}
-
-📸 Manda tu foto para cotizar tu diseño 💅`;
-
-  summaryContent.textContent = txt.replace(/\n/g, '\n');
-
-  // Build WhatsApp link (pre-filled message)
-  const waText = encodeURIComponent(txt + '\n¡Gracias!');
-  whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
-
-  summary.classList.remove('hidden');
+    // mensaje temporal
+    if (msg) {
+      msg.style.opacity = 1;
+      msg.textContent = `Has seleccionado ${selectedRating} de 5`;
+      setTimeout(()=> msg.style.opacity = 0, 1800);
+    }
+  });
+  // efecto hover accesible
+  star.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' ') star.click();
+  });
 });
 
+// --- Enviar reseña a Google Sheets ---
+if (saveBtn) {
+  saveBtn.addEventListener('click', () => {
+    const comentario = textarea.value.trim();
+    if (!selectedRating || comentario === "") {
+      alert("Por favor califica y escribe tu experiencia antes de enviar.");
+      return;
+    }
 
-    copyBtn.addEventListener('click', ()=>{
-      navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
-        copyBtn.textContent = 'Copiado';
-        setTimeout(()=>copyBtn.textContent='Copiar resumen',1200);
-      }).catch(()=>{ copyBtn.textContent='Error'; setTimeout(()=>copyBtn.textContent='Copiar resumen',1200); });
+    const params = new URLSearchParams();
+    params.append("Calificacion", selectedRating);
+    params.append("Comentario", comentario);
+    params.append("Fecha", new Date().toLocaleString("es-MX"));
+
+    // Intento de POST (Apps Script acepta GET/POST según cómo lo tengas)
+    fetch(scriptURL + "?" + params.toString(), { method: "POST" })
+      .then(r => r.text())
+      .then(() => {
+        if (savedMsg) {
+          savedMsg.style.opacity = 1;
+          setTimeout(() => savedMsg.style.opacity = 0, 2200);
+        }
+        textarea.value = "";
+        selectedRating = 0;
+        stars.forEach(s => { s.classList.remove('active'); s.setAttribute('aria-checked', "false"); });
+        loadReviews();
+      })
+      .catch(err => alert("Error al guardar reseña: " + err));
+  });
+}
+
+// --- Cargar reseñas ---
+function loadReviews() {
+  if (!reviewsList) return;
+  // Si no quieres usar el servicio, comenta el fetch y muestra contenido mock.
+  fetch(scriptURL)
+    .then(r => r.json())
+    .then(data => {
+      reviewsList.innerHTML = "";
+      if (!data || data.length === 0) {
+        reviewsList.innerHTML = "<p style='color:gray;'>Aún no hay reseñas.</p>";
+        return;
+      }
+      // mostramos las reseñas más recientes primero
+      data.reverse().forEach(row => {
+        const div = document.createElement("div");
+        div.style.background = "rgba(255,255,255,0.03)";
+        div.style.border = "1px solid rgba(255,255,255,0.06)";
+        div.style.borderRadius = "12px";
+        div.style.padding = "10px";
+        div.style.marginBottom = "10px";
+        div.innerHTML = `
+          <div style="color:gold;">${'★'.repeat(row.Calificacion)}${'☆'.repeat(5 - row.Calificacion)}</div>
+          <p style="margin:6px 0;color:#e6eef8;">${escapeHtml(row.Comentario)}</p>
+          <small style="color:var(--muted);">${row.Fecha}</small>
+        `;
+        reviewsList.appendChild(div);
+      });
+    })
+    .catch(err => {
+      // si hay error, evitar romper la página
+      console.log("Error al cargar reseñas:", err);
+      reviewsList.innerHTML = "<p style='color:gray;'>No fue posible cargar reseñas.</p>";
     });
+}
 
-    clearBtn.addEventListener('click', ()=>{ bookingForm.reset(); summary.classList.add('hidden'); });
+// pequeña función para escapar HTML y evitar inyección al mostrar comentarios
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"'`=\/]/g, function(s) {
+    return {
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","/":"&#x2F;","`":"&#x60;","=":"&#x3D;"
+    }[s];
+  });
+}
 
-    // Small accessibility & year
-    document.getElementById('year').textContent = new Date().getFullYear();
+loadReviews();
 
-    // Prevent past dates on unsupported browsers (extra fallback)
-    (function setMinDate(){
-      const dateInputs = document.querySelectorAll('input[type=date]');
-      const today = new Date().toISOString().split('T')[0];
-      dateInputs.forEach(i=>i.setAttribute('min', today));
-    })();
-  </script>
+/* Opcional: guardar la experiencia localmente y mostrarla */
+(function() {
+  const experienceDisplay = document.getElementById('experienceDisplay');
+  const experienceText = document.getElementById('experienceText');
+
+  if (localStorage.getItem('fasttv_experience') && experienceText && experienceDisplay) {
+    experienceText.textContent = localStorage.getItem('fasttv_experience');
+    experienceDisplay.style.display = 'block';
+  }
+
+  if (saveBtn) {
+    saveBtn.addEventListener('click', () => {
+      const comment = textarea.value.trim();
+      if (comment) {
+        localStorage.setItem('fasttv_experience', comment);
+        if (experienceText && experienceDisplay) {
+          experienceText.textContent = comment;
+          experienceDisplay.style.display = 'block';
+        }
+      }
+    });
+  }
+})();
+
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
