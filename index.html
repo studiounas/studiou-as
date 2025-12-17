@@ -244,15 +244,13 @@ generarCalendario();
   </div>
 
   <script>
-    // Fill gallery with sample images (Unsplash curated links)
+ // Fill gallery with sample images (Unsplash curated links)
     const galleryUrls = [
       'imagen1.jpeg',
       'imagen2.jpeg',
       'imagen3.jpeg',
       'imagen4.jpeg',
       'imagen5.jpeg',
-      'imagen6.jpeg',
-      'imagen7.jpeg',
     ];
     const grid = document.querySelector('#galeria .grid');
     const tmpl = document.getElementById('img-template');
@@ -265,6 +263,7 @@ generarCalendario();
       wrapper.addEventListener('click', () => openLightbox(url));
       grid.appendChild(node);
     });
+
 
     // Lightbox
     const lightbox = document.getElementById('lightbox');
@@ -329,6 +328,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
