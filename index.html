@@ -122,20 +122,19 @@
 
       <!-- Template de imagen -->
  <template id="img-template">
-  <div class="relative group rounded-xl overflow-hidden cursor-pointer w-full max-w-[220px]">
+  <div class="relative group rounded-xl overflow-hidden cursor-pointer w-full max-w-[170px] mx-auto">
     <img
-      class="w-full aspect-square object-cover
-             transform group-hover:scale-105 transition duration-300"
+      class="w-full h-40 object-cover transform group-hover:scale-105 transition"
       loading="lazy"
     >
     <div
-      class="absolute inset-0 bg-black/25 opacity-0
-             group-hover:opacity-100 transition
-             flex items-center justify-center text-white text-sm font-medium">
+      class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition
+             flex items-center justify-center text-white text-sm">
       Ver
     </div>
   </div>
 </template>
+
 
      
     </div>
@@ -394,6 +393,7 @@ generarCalendario();
   </script>
 </body>
 </html>
+
 
 
 
