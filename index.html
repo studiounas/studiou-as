@@ -3,390 +3,131 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> Nails studio— Citas de Uñas</title>
-  <meta name="description" content="Reserva tu cita de uñas: manicura, pedicura, gel, acrílico. Precios claros, galería y reserva rápida." />
+  <title>Nails Studio — Citas de Uñas</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Tailwind CDN (para prototipo premium) -->
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     :root{--accent:#b76bae;--muted:#6b7280}
-    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
-    .glass{background:rgba(255,255,255,0.65);backdrop-filter:blur(6px)}
-    .shadow-soft{box-shadow:0 10px 30px rgba(11,15,27,0.07)}
-    .price-badge{background:linear-gradient(90deg,#ffd1e6, #b76bae);color:white}
+    body{font-family:'Inter',system-ui}
+    .glass{background:rgba(255,255,255,.65);backdrop-filter:blur(6px)}
+    .shadow-soft{box-shadow:0 10px 30px rgba(11,15,27,.07)}
+    .price-badge{background:linear-gradient(90deg,#ffd1e6,#b76bae);color:white}
   </style>
 </head>
 
-
-
-
 <body class="bg-gradient-to-b from-white to-rose-50 min-h-screen text-slate-900">
-  <header class="max-w-6xl mx-auto p-6 flex items-center justify-between">
-    <div class="flex items-center gap-4">
-      <div class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-br from-pink-300 to-purple-500 text-white font-bold shadow-md">Y</div>
-      <div>
-        <h1 class="text-xl font-semibold">Nails Studio </h1>
-        <p class="text-sm text-[var(--muted)]">Citas de uñas · Manicura · Pedicura · Acripie · Baño de Acrílico</p>
-      </div>
+
+<header class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+  <div class="flex gap-4 items-center">
+    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-300 to-purple-500 text-white flex items-center justify-center font-bold">Y</div>
+    <div>
+      <h1 class="font-semibold text-xl">Nails Studio</h1>
+      <p class="text-sm text-[var(--muted)]">Citas de uñas premium</p>
     </div>
-    <nav class="hidden md:flex gap-6 items-center text-sm">
-      <a href="#servicios" class="hover:underline">Servicios</a>
-      <a href="#galeria" class="hover:underline">Galería</a>
-      
-      <a href="#reservar" class="py-2 px-4 rounded-full bg-[var(--accent)] text-white shadow">Reservar cita</a>
-    </nav>
-  </header>
+  </div>
+  <a href="#reservar" class="hidden md:block px-4 py-2 rounded-full bg-[var(--accent)] text-white">Reservar cita</a>
+</header>
 
-  <main class="max-w-6xl mx-auto px-6 pb-20">
+<main class="max-w-6xl mx-auto px-4 pb-20">
 
-  <!-- HERO -->
-  <section class="flex justify-center mb-10">
-    <div class="glass p-8 rounded-2xl shadow-soft w-full max-w-2xl text-center md:text-left">
-      
-      <h2 class="text-3xl md:text-4xl font-extrabold">
-        Luce unas bonitas uñas<br>Reserva tu cita
-      </h2>
-
-      <p class="mt-3 text-[var(--muted)]">
-        Diseños personalizados. Elige tu servicio, fecha y hora.
-      </p>
-
-      <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-left">
-        <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Manicura pedicura</li>
-        <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Acripie Baño de acrílico</li>
-        <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Uñas acrílicas con tip</li>
-        <li class="flex gap-3 items-start"><span class="font-semibold">✔</span> Retiro / Retoque</li>
-      </ul>
-
-      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 mt-6">
-        <a href="#reservar" class="bg-[var(--accent)] text-white px-6 py-3 rounded-full shadow text-center">
-          Reservar ahora
-        </a>
-        <a href="#galeria" class="border px-6 py-3 rounded-full text-center">
-          Ver diseños
-        </a>
-      </div>
-
+<!-- HERO -->
+<section class="flex justify-center mb-10">
+  <div class="glass p-8 rounded-2xl shadow-soft max-w-2xl w-full text-center md:text-left">
+    <h2 class="text-3xl md:text-4xl font-extrabold">Luce unas uñas increíbles</h2>
+    <p class="mt-3 text-[var(--muted)]">Reserva fácil, rápida y segura</p>
+    <div class="flex justify-center md:justify-start gap-3 mt-6">
+      <a href="#reservar" class="px-6 py-3 rounded-full bg-[var(--accent)] text-white">Reservar ahora</a>
     </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="flex justify-center mb-12">
-    <div class="glass p-6 rounded-2xl shadow-soft w-full max-w-md">
-      
-      <h3 class="text-xl font-semibold">Servicios populares</h3>
-
-      <p class="text-sm text-[var(--muted)] mt-2">
-        Elige el servicio que prefieras. Si quieres un diseño personalizado, escríbelo al reservar.
-      </p>
-
-      <ul class="mt-4 space-y-3 text-sm">
-        <li class="flex justify-between items-center">
-          <strong>Manicura clásica</strong>
-          <span class="price-badge px-3 py-1 rounded-full">$150</span>
-        </li>
-
-        <li class="flex justify-between items-center">
-          <strong>Uñas Acrílicas</strong>
-          <span class="price-badge px-3 py-1 rounded-full">$200</span>
-        </li>
-
-        <li class="flex justify-between items-center">
-          <strong>Pedicura (Acripie)</strong>
-          <span class="price-badge px-3 py-1 rounded-full">$180</span>
-        </li>
-      </ul>
-
-    </div>
-  </section>
-
-</main>
-
-<!-- paquetes premium -->
-   
-    
-    <!-- Galería -->
-   <section id="galeria" class="mb-12 flex justify-center">
-  <div class="w-full max-w-6xl text-center px-6">
-
-    <h3 class="text-2xl font-semibold mb-4">Galería de diseños</h3>
-
-    <p class="text-sm text-[var(--muted)] mb-6">
-      Toca cualquier imagen para verla ampliada. Inspírate y elige tu estilo.
-    </p>
-
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 place-items-center">
-
-      <template id="img-template">
-        <div class="relative group rounded-xl overflow-hidden cursor-pointer w-full max-w-[170px] mx-auto">
-          <img
-            class="w-full h-40 object-cover transform group-hover:scale-105 transition"
-            loading="lazy"
-          >
-          <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            Ver
-          </div>
-        </div>
-      </template>
-
-    </div>
-
   </div>
 </section>
+
+<!-- FORMULARIO -->
+<section id="reservar" class="flex justify-center">
+  <div class="glass p-6 rounded-2xl shadow-soft max-w-3xl w-full">
+    <h3 class="text-2xl font-semibold mb-4 text-center">Reservar cita</h3>
+
+<form id="bookingForm" class="grid gap-4">
+
+<div class="grid md:grid-cols-2 gap-4">
+  <input required name="name" placeholder="Nombre completo" class="p-3 rounded border">
+  <input required name="phone" placeholder="WhatsApp" class="p-3 rounded border">
+</div>
+
+<select name="service" required class="p-3 rounded border">
+  <option>Manicura clásica — $150</option>
+  <option>Uñas acrílicas — $200</option>
+  <option>Pedicura (Acripie) — $180</option>
+</select>
+
+<!-- LEYENDA -->
+<div class="flex flex-wrap justify-center gap-4 text-sm font-semibold mt-4">
+  <div class="flex items-center gap-2"><span class="w-3 h-3 bg-green-500 rounded-full"></span>Disponible</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 bg-orange-400 rounded-full"></span>Agotado</div>
+  <div class="flex items-center gap-2"><span class="w-3 h-3 bg-red-500 rounded-full"></span>No hay cita</div>
+</div>
+
+<!-- CALENDARIO -->
+<div id="calendario" class="grid grid-cols-7 gap-2 text-center max-w-md mx-auto mt-4"></div>
+
+<div class="grid md:grid-cols-2 gap-4">
+  <input type="date" name="date" required class="p-3 rounded border">
+  <input type="time" name="time" required class="p-3 rounded border">
+</div>
+
+<textarea name="notes" rows="3" class="p-3 rounded border" placeholder="Diseño opcional"></textarea>
+
+<button type="submit" class="bg-[var(--accent)] text-white py-3 rounded-full font-semibold">
+Confirmar cita
+</button>
+
+</form>
+
+<div id="summary" class="hidden mt-6 p-4 border rounded bg-white">
+  <h4 class="font-semibold mb-2">Resumen</h4>
+  <pre id="summaryContent" class="text-sm"></pre>
+  <a id="whatsappBtn" target="_blank" class="block mt-4 bg-green-600 text-white text-center py-2 rounded">
+    Enviar por WhatsApp
+  </a>
+</div>
+
+</div>
+</section>
+
 </main>
 
-    <!-- Formulario de reserva -->
-    <section id="reservar" class="glass p-6 rounded-2xl shadow-soft max-w-3xl mx-auto">
-      <h3 class="text-2xl font-semibold">Reservar cita</h3>
-      <p class="text-sm text-[var(--muted)] mb-4">Completa los datos y revisa el resumen antes de confirmar. (Esta página usa simulación local — conecta con tu backend cuando lo necesites.)</p>
-      <form id="bookingForm" class="grid gap-3">
-        <div class="grid md:grid-cols-2 gap-3">
-          <label class="flex flex-col text-sm"><span>Nombre completo</span><input required name="name" class="mt-1 p-3 rounded-md border" placeholder="Ej. María Pérez"></label>
-          <label class="flex flex-col text-sm"><span>Teléfono / WhatsApp</span><input required name="phone" class="mt-1 p-3 rounded-md border" placeholder="Ej. 55 1234 5678"></label>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-3">
-          <label class="flex flex-col text-sm"><span>Servicio</span>
-            <select required name="service" class="mt-1 p-3 rounded-md border">
-              <option value="Manicura clásica">Manicura clásica — $150</option>
-              <option value="Manicura gel">Uñas Acrilicas — $200</option>
-              <option value="Acrílico completo">Pedicura (Acripie) — $180</option>
-            </select>
-          </label>
-          <label class="flex flex-col text-sm"><span>Fecha</span><div id="calendario" class="grid grid-cols-7 gap-1 text-center text-xs my-2"></div>
-  <div>
- <div class="flex flex-wrap gap-4 justify-center items-center mb-4 text-sm font-semibold">
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-green-500"></span>
-        <span class="text-gray-700">Disponible</span>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-orange-400"></span>
-        <span class="text-gray-700">Citas agotadas</span>
-      </div>
-
-      <div class="flex items-center gap-2">
-        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-        <span class="text-gray-700">No hay cita</span>
-      </div>
-    </div>
-
-    <!-- CALENDARIO -->
-    <div id="calendario" class="grid grid-cols-7 gap-2"></div>
-
-  </div>
+<footer class="py-6 text-center text-sm text-[var(--muted)]">
+© <span id="year"></span> Nails Studio · Página responsive
+</footer>
 
 <script>
-
-function generarCalendario() {
-  const cal = document.getElementById('calendario');
-  cal.innerHTML = '';
-
-  const hoy = new Date();
-  const año = hoy.getFullYear();
-  const mes = hoy.getMonth();
-  const primerDia = new Date(año, mes, 1).getDay();
-  const ultimoDia = new Date(año, mes + 1, 0).getDate();
-  const nombresDias = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
-
-  // Días configurados
-  const diasVerdes  = [,16,17,18,19,20,22,23,24,25 ,26,27,29,30,31]; // Verde → Disponible
-  const diasNaranja = [,15 , , ];            // Naranja → Citas agotadas
-  const diasRojos   = [,14,21,28, ];               // Rojo → No hay cita
-
-  // Encabezados de días
-  nombresDias.forEach(d => {
-    const h = document.createElement('div');
-    h.textContent = d;
-    h.className = 'font-bold text-center text-gray-700';
-    cal.appendChild(h);
+function generarCalendario(){
+  const cal=document.getElementById('calendario');
+  cal.innerHTML='';
+  const diasVerdes=[16,17,18,19,20,22,23,24,25,26,27,29,30,31];
+  const diasRojos=[14,21,28];
+  ['L','M','M','J','V','S','D'].forEach(d=>{
+    cal.innerHTML+=`<div class="font-bold">${d}</div>`;
   });
-
-  // Offset para el primer día del mes
-  let offset = primerDia === 0 ? 6 : primerDia - 1;
-  for(let i = 0; i < offset; i++){
-    cal.appendChild(document.createElement('div'));
-  }
-
-  // Días del mes
-  for(let dia = 1; dia <= ultimoDia; dia++){
-    const c = document.createElement('div');
-    c.textContent = dia;
-    c.className = 'p-2 rounded-lg text-center border cursor-pointer';
-
-    if(diasVerdes.includes(dia)){
-      c.classList.add('bg-green-400','text-white','shadow-lg'); // Verde: Disponible
-    } else if(diasNaranja.includes(dia)){
-      c.classList.add('bg-orange-400','text-white','shadow-md'); // Naranja: Citas agotadas
-    } else if(diasRojos.includes(dia)){
-      c.classList.add('bg-red-500','text-white','opacity-80','shadow-sm'); // Rojo: No hay cita
-    } else {
-      c.classList.add('bg-gray-200'); // Gris: No configurado
-    }
-
-    cal.appendChild(c);
+  for(let i=1;i<=31;i++){
+    let cls='bg-gray-200';
+    if(diasVerdes.includes(i)) cls='bg-green-400 text-white';
+    if(diasRojos.includes(i)) cls='bg-red-500 text-white';
+    cal.innerHTML+=`<div class="p-2 rounded ${cls}">${i}</div>`;
   }
 }
-
-// Generar calendario al cargar
 generarCalendario();
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
 
-
-</script><span>🗓️Calendario</span><input required type="date" name="date" min="${new Date().toISOString().split('T')[0]}" class="mt-1 p-3 rounded-md border"></label>
-         <label class="flex flex-col text-sm"><span>🕓Hora</span><input required type="time" name="time" class="mt-1 p-1 rounded-md border"></label>
-        </div>
-
-        <label class="flex flex-col text-sm"><span> 💅🏼Diseño (opcional)</span><textarea name="notes" rows="3" class="mt-1 p-3 rounded-md border" placeholder="Ej. Me gustaría color nude con brillo"></textarea></label>
-
-        <div class="flex gap-3 items-center">
-          <button type="submit" class="px-5 py-3 rounded-full bg-[var(--accent)] text-white font-semibold shadow">Confirmar cita</button>
-          <button type="button" id="clearBtn" class="px-4 py-3 rounded-full border">Limpiar</button>
-          <div class="ml-auto text-sm text-[var(--muted)]"></div>
-        </div>
-      </form>
-
-      <div id="summary" class="mt-6 hidden p-4 border rounded-md bg-white">
-        <h4 class="font-semibold">Resumen de la reserva</h4>
-        <div id="summaryContent" class="text-sm mt-2"></div>
-        <div class="mt-4 flex gap-3">
-          <button id="copyBtn" class="px-4 py-2 rounded bg-slate-100">Copiar resumen</button>
-          <a id="whatsappBtn" class="px-4 py-2 rounded bg-green-600 text-white" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-        </div>
-      </div>
-    </section>
-
-    
-    <!-- Testimonios y contacto -->
-    <section class="mt-10">
-  <div class="max-w-3xl mx-auto">
-    <div class="glass p-6 rounded-2xl shadow-soft text-center">
-      <h4 class="text-lg font-semibold">Contacto</h4>
-
-      <p class="text-sm text-[var(--muted)] mt-2">
-        Cualquier duda escríbenos por WhatsApp o llámanos.
-      </p>
-
-      <p class="mt-4 font-semibold">
-        WhatsApp:
-        <a href="https://wa.me/522321364743"
-           target="_blank"
-           class="text-[var(--accent)]">
-          +52 232 136 4743
-        </a>
-      </p>
-
-      <p class="text-sm text-[var(--muted)] mt-4">
-        Dirección: San Rafael, Col. Gustavo del Valle
-      </p>
-    </div>
-  </div>
-</section>
-
-  </main>
-  <footer class="mt-12 py-6 border-t bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-sm flex justify-between items-center">
-      <div>© <span id="year"></span> Studio Uñas · Todos los derechos reservados</div>
-      <div class="text-[var(--muted)]">Diseño premium · Página responsive</div>
-    </div>
-  </footer>
-
-  <!-- Modal / Lightbox -->
-  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
-    <div class="max-w-3xl w-full p-4">
-      <button id="closeLb" class="mb-4 text-white">Cerrar ✕</button>
-      <img id="lbImg" src="" alt="" class="w-full rounded-lg shadow-lg">
-    </div>
-  </div>
-
-  <script>
-    // Fill gallery with sample images (Unsplash curated links)
-    const galleryUrls = [
-      'imagen1.jpeg',
-      'imagen2.jpeg',
-      'imagen3.jpeg',
-      'imagen4.jpeg',
-      'imagen5.jpeg',
-      'imagen6.jpeg',
-      'imagen7.jpeg',
-    ];
-    const grid = document.querySelector('#galeria .grid');
-    const tmpl = document.getElementById('img-template');
-    galleryUrls.forEach(url => {
-      const node = tmpl.content.cloneNode(true);
-      const img = node.querySelector('img');
-      img.src = url;
-      img.alt = 'Diseño de uñas';
-      const wrapper = node.querySelector('div');
-      wrapper.addEventListener('click', () => openLightbox(url));
-      grid.appendChild(node);
-    });
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    function openLightbox(url){ lbImg.src = url; lightbox.classList.remove('hidden'); document.body.style.overflow='hidden'; }
-    document.getElementById('closeLb').addEventListener('click', closeLb);
-    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
-    function closeLb(){ lightbox.classList.add('hidden'); lbImg.src=''; document.body.style.overflow='auto'; }
-
-    // Booking form logic (client-side simulation)
-    const bookingForm = document.getElementById('bookingForm');
-    const summary = document.getElementById('summary');
-    const summaryContent = document.getElementById('summaryContent');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const clearBtn = document.getElementById('clearBtn');
-
-    bookingForm.addEventListener('submit', (e)=>{
-  e.preventDefault();
-
-  const f = new FormData(bookingForm);
-  const data = Object.fromEntries(f.entries());
-
-  const txt =
-`*Reserva:*
-👩🏼‍💼Nombre: ${data.name}
-📱Tel: ${data.phone}
-💅🏼Servicio: ${data.service}
-🗓️Fecha: ${data.date} 🕓Hora: ${data.time}
-✨Diseño: ${data.notes || '-'}
-
-📸 Manda tu foto para cotizar tu diseño 💅`;
-
-  summaryContent.textContent = txt.replace(/\n/g, '\n');
-
-  // Build WhatsApp link (pre-filled message)
-  const waText = encodeURIComponent(txt + '\n¡Gracias!');
-  whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
-
-  summary.classList.remove('hidden');
-});
-
-
-    copyBtn.addEventListener('click', ()=>{
-      navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
-        copyBtn.textContent = 'Copiado';
-        setTimeout(()=>copyBtn.textContent='Copiar resumen',1200);
-      }).catch(()=>{ copyBtn.textContent='Error'; setTimeout(()=>copyBtn.textContent='Copiar resumen',1200); });
-    });
-
-    clearBtn.addEventListener('click', ()=>{ bookingForm.reset(); summary.classList.add('hidden'); });
-
-    // Small accessibility & year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Prevent past dates on unsupported browsers (extra fallback)
-    (function setMinDate(){
-      const dateInputs = document.querySelectorAll('input[type=date]');
-      const today = new Date().toISOString().split('T')[0];
-      dateInputs.forEach(i=>i.setAttribute('min', today));
-    })();
-  </script>
 </body>
 </html>
+
+
 
 
 
