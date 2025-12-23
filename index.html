@@ -229,7 +229,7 @@ generarCalendario();
 
     
     <!-- Testimonios y contacto -->
-    <section class="mt-10">
+  <section class="mt-10">
   <div class="max-w-3xl mx-auto">
     <div class="glass p-6 rounded-2xl shadow-soft text-center">
       <h4 class="text-lg font-semibold">Contacto</h4>
@@ -247,6 +247,47 @@ generarCalendario();
         </a>
       </p>
 
+     <!-- REDES SOCIALES -->
+<div class="mt-6 flex justify-center gap-10">
+
+  <!-- FACEBOOK -->
+  <div class="flex flex-col items-center gap-2">
+    <a href="https://www.facebook.com/share/1BtJb97SXB/"
+       target="_blank"
+       aria-label="Página de Facebook"
+       class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 shadow hover:bg-blue-700 transition">
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"
+           class="w-6 h-6 fill-white">
+        <path d="M279.14 288l14.22-92.66h-88.91V117.78c0-25.35 12.42-50.06 52.24-50.06H297V6.26S259.36 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
+      </svg>
+
+    </a>
+    <span class="text-sm font-semibold text-blue-600">
+      Página de Facebook
+    </span>
+  </div>
+
+  <!-- INSTAGRAM LOGO OFICIAL -->
+<div class="flex flex-col items-center gap-2">
+  <a href="https://www.instagram.com/TU_USUARIO"
+     target="_blank"
+     aria-label="Instagram"
+     class="w-14 h-14 rounded-xl shadow overflow-hidden hover:scale-105 transition">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/250px-Instagram_logo_2022.svg.png"
+         alt="Instagram"
+         class="w-full h-full object-cover">
+  </a>
+
+  <span class="text-sm font-semibold text-pink-600">
+    Instagram
+  </span>
+</div>
+
+</div>
+
+
       <p class="text-sm text-[var(--muted)] mt-4">
         Dirección: San Rafael, Col. Gustavo del Valle
       </p>
@@ -254,69 +295,83 @@ generarCalendario();
   </div>
 </section>
 
-  </main>
-  <footer class="mt-12 py-6 border-t bg-white">
-    <div class="max-w-6xl mx-auto px-6 text-sm flex justify-between items-center">
-      <div>© <span id="year"></span> Studio Uñas · Todos los derechos reservados</div>
-      <div class="text-[var(--muted)]">Diseño premium · Página responsive</div>
-    </div>
-  </footer>
+</main>
 
-  <!-- Modal / Lightbox -->
-  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
-    <div class="max-w-3xl w-full p-4">
-      <button id="closeLb" class="mb-4 text-white">Cerrar ✕</button>
-      <img id="lbImg" src="" alt="" class="w-full rounded-lg shadow-lg">
-    </div>
+<footer class="mt-12 py-6 border-t bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-sm flex justify-between items-center">
+    <div>© <span id="year"></span> Studio Uñas · Todos los derechos reservados</div>
+    <div class="text-[var(--muted)]">Diseño premium · Página responsive</div>
   </div>
+</footer>
 
-  <script>
-    // Fill gallery with sample images (Unsplash curated links)
-    const galleryUrls = [
-      'imagen1.jpeg',
-      'imagen2.jpeg',
-      'imagen3.jpeg',
-      'imagen4.jpeg',
-      'imagen5.jpeg',
-      'imagen6.jpeg',
-      'imagen7.jpeg',
-      'imagen8.jpeg',
-    ];
-    const grid = document.querySelector('#galeria .grid');
-    const tmpl = document.getElementById('img-template');
-    galleryUrls.forEach(url => {
-      const node = tmpl.content.cloneNode(true);
-      const img = node.querySelector('img');
-      img.src = url;
-      img.alt = 'Diseño de uñas';
-      const wrapper = node.querySelector('div');
-      wrapper.addEventListener('click', () => openLightbox(url));
-      grid.appendChild(node);
-    });
+<!-- Modal / Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70">
+  <div class="max-w-3xl w-full p-4">
+    <button id="closeLb" class="mb-4 text-white">Cerrar ✕</button>
+    <img id="lbImg" src="" alt="" class="w-full rounded-lg shadow-lg">
+  </div>
+</div>
 
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    function openLightbox(url){ lbImg.src = url; lightbox.classList.remove('hidden'); document.body.style.overflow='hidden'; }
-    document.getElementById('closeLb').addEventListener('click', closeLb);
-    lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
-    function closeLb(){ lightbox.classList.add('hidden'); lbImg.src=''; document.body.style.overflow='auto'; }
+<script>
+  // Fill gallery with sample images
+  const galleryUrls = [
+    'imagen1.jpeg',
+    'imagen2.jpeg',
+    'imagen3.jpeg',
+    'imagen4.jpeg',
+    'imagen5.jpeg',
+    'imagen6.jpeg',
+    'imagen7.jpeg',
+    'imagen8.jpeg',
+  ];
 
-    // Booking form logic (client-side simulation)
-    const bookingForm = document.getElementById('bookingForm');
-    const summary = document.getElementById('summary');
-    const summaryContent = document.getElementById('summaryContent');
-    const whatsappBtn = document.getElementById('whatsappBtn');
-    const copyBtn = document.getElementById('copyBtn');
-    const clearBtn = document.getElementById('clearBtn');
+  const grid = document.querySelector('#galeria .grid');
+  const tmpl = document.getElementById('img-template');
 
-    bookingForm.addEventListener('submit', (e)=>{
-  e.preventDefault();
+  galleryUrls.forEach(url => {
+    const node = tmpl.content.cloneNode(true);
+    const img = node.querySelector('img');
+    img.src = url;
+    img.alt = 'Diseño de uñas';
+    const wrapper = node.querySelector('div');
+    wrapper.addEventListener('click', () => openLightbox(url));
+    grid.appendChild(node);
+  });
 
-  const f = new FormData(bookingForm);
-  const data = Object.fromEntries(f.entries());
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
 
-  const txt =
+  function openLightbox(url){
+    lbImg.src = url;
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow='hidden';
+  }
+
+  document.getElementById('closeLb').addEventListener('click', closeLb);
+  lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) closeLb(); });
+
+  function closeLb(){
+    lightbox.classList.add('hidden');
+    lbImg.src='';
+    document.body.style.overflow='auto';
+  }
+
+  // Booking form logic
+  const bookingForm = document.getElementById('bookingForm');
+  const summary = document.getElementById('summary');
+  const summaryContent = document.getElementById('summaryContent');
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  const copyBtn = document.getElementById('copyBtn');
+  const clearBtn = document.getElementById('clearBtn');
+
+  bookingForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+
+    const f = new FormData(bookingForm);
+    const data = Object.fromEntries(f.entries());
+
+    const txt =
 `*Reserva:*
 👩🏼‍💼Nombre: ${data.name}
 📱Tel: ${data.phone}
@@ -326,37 +381,358 @@ generarCalendario();
 
 📸 Manda tu foto para cotizar tu diseño 💅`;
 
-  summaryContent.textContent = txt.replace(/\n/g, '\n');
+    summaryContent.textContent = txt;
 
-  // Build WhatsApp link (pre-filled message)
-  const waText = encodeURIComponent(txt + '\n¡Gracias!');
-  whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
+    const waText = encodeURIComponent(txt + '\n¡Gracias!');
+    whatsappBtn.href = `https://wa.me/522321364743?text=${waText}`;
 
-  summary.classList.remove('hidden');
-});
+    summary.classList.remove('hidden');
+  });
 
-
-    copyBtn.addEventListener('click', ()=>{
-      navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
-        copyBtn.textContent = 'Copiado';
-        setTimeout(()=>copyBtn.textContent='Copiar resumen',1200);
-      }).catch(()=>{ copyBtn.textContent='Error'; setTimeout(()=>copyBtn.textContent='Copiar resumen',1200); });
+  copyBtn.addEventListener('click', ()=>{
+    navigator.clipboard.writeText(summaryContent.textContent).then(()=>{
+      copyBtn.textContent = 'Copiado';
+      setTimeout(()=>copyBtn.textContent='Copiar resumen',1200);
     });
+  });
 
-    clearBtn.addEventListener('click', ()=>{ bookingForm.reset(); summary.classList.add('hidden'); });
+  clearBtn.addEventListener('click', ()=>{
+    bookingForm.reset();
+    summary.classList.add('hidden');
+  });
 
-    // Small accessibility & year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-    // Prevent past dates on unsupported browsers (extra fallback)
-    (function setMinDate(){
-      const dateInputs = document.querySelectorAll('input[type=date]');
-      const today = new Date().toISOString().split('T')[0];
-      dateInputs.forEach(i=>i.setAttribute('min', today));
-    })();
-  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
